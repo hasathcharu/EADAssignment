@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{CCE918A5-B0FC-41A2-9D2D-0501BB7AF1BD}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="InventoryManagement/Services/InventoryServices.cs">
+    <Files>
+      <File FileName="InventoryManagement/Services/IInventoryService.cs" Line="15" Column="44" />
+      <File FileName="InventoryManagement/Services/InventoryServices.cs" Line="23" Column="25" />
+      <File FileName="InventoryManagement/DTO/OrderDTO.cs" />
+      <File FileName="InventoryManagement/Program.cs" />
+      <File FileName="InventoryManagement/appsettings.Development.json" />
+      <File FileName="InventoryManagement/appsettings.json" />
+      <File FileName="InventoryManagement/Properties/launchSettings.json" />
+      <File FileName="InventoryManagement/Controllers/InventoryController.cs" Line="38" Column="19" />
+      <File FileName="InventoryManagement/Models/InventoryModel.cs" />
+      <File FileName="InventoryManagement/Data/DataContext.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="InventoryManagement" expanded="True">
+            <Node name="InventoryManagement" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="DTO" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="InventoryServices.cs" selected="True" />
+              </Node>
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.InventoryManagement PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+</Properties>
