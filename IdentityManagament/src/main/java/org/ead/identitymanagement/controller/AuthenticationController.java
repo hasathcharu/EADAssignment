@@ -1,10 +1,10 @@
-package org.ead.usermanagement.controller;
+package org.ead.identitymanagement.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.ead.usermanagement.dto.AuthenticationRequest;
-import org.ead.usermanagement.dto.RegisterRequest;
-import org.ead.usermanagement.response.AuthenticationResponse;
-import org.ead.usermanagement.service.AuthenticationService;
+import org.ead.identitymanagement.dto.AuthenticationRequest;
+import org.ead.identitymanagement.dto.RegisterRequest;
+import org.ead.identitymanagement.response.AuthenticationResponse;
+import org.ead.identitymanagement.service.AuthenticationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/auth")
+@RequestMapping("/api/v1/auth")
 public class AuthenticationController {
 
     private final AuthenticationService service;
+
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody RegisterRequest request
