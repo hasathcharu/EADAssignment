@@ -1,13 +1,12 @@
 package org.ead.orderplacement.service;
 
 import lombok.RequiredArgsConstructor;
-import org.adbms.orderplacement.dto.*;
+import org.ead.orderplacement.dto.*;
 import org.ead.orderplacement.exception.RestException;
 import org.ead.orderplacement.model.Order;
 import org.ead.orderplacement.model.OrderItem;
 import org.ead.orderplacement.model.OrderStatus;
 import org.ead.orderplacement.repository.OrderRepository;
-import org.ead.orderplacement.dto.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
