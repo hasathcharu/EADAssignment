@@ -1,4 +1,4 @@
-package org.ead.identitymanagement.model;
+package org.ead.identitymanagement.models;
 
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -11,11 +11,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.List;
 
 @Document(value = "user")
 @AllArgsConstructor
@@ -31,10 +29,9 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
+        return null;
     }
 
     @Override

@@ -18,7 +18,7 @@
         <module>UserManagement</module>
         <module>DiscoveryServer</module>
         <module>APIGateway</module>
-        <module>IdentityManagament</module>
+        <module>IdentityManagement</module>
     </modules>
 
     <properties>
