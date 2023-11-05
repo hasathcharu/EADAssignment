@@ -1,10 +1,7 @@
 package org.ead.usermanagement.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.ead.usermanagement.dto.NewUserDTO;
-import org.ead.usermanagement.dto.UpdateUserDTO;
-import org.ead.usermanagement.dto.UserDetailsDTO;
-import org.ead.usermanagement.dto.UsersResponse;
+import org.ead.usermanagement.dto.*;
 import org.ead.usermanagement.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

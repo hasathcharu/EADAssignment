@@ -1,18 +1,17 @@
 package org.ead.usermanagement.service;
 
 import lombok.RequiredArgsConstructor;
-import org.ead.usermanagement.dto.NewUserDTO;
-import org.ead.usermanagement.dto.UpdateUserDTO;
-import org.ead.usermanagement.dto.UserDetailsDTO;
-import org.ead.usermanagement.dto.UsersResponse;
+import org.ead.usermanagement.dto.*;
 import org.ead.usermanagement.exception.RestException;
 import org.ead.usermanagement.model.User;
 import org.ead.usermanagement.repository.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +19,8 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
+
+    private final WebClient.Builder webClientBuilder;
     public void createUser(NewUserDTO newUserDTO) {
 
         User checkUser = userRepository.findByEmail(newUserDTO.getEmail()).orElse(null);
@@ -78,7 +79,22 @@ public class UserService {
         if(user==null){
             throw new RestException(HttpStatus.NOT_FOUND, "User not found");
         }
-        userRepository.deleteUserByEmail(email);
+
+        String res = webClientBuilder.build()
+                .delete()
+                .uri("http://identitymanagement/api/auth/delete/"+email)
+                .retrieve()
+                .bodyToMono(String.class)
+                .onErrorResume(e -> {
+                    System.out.println(e.getMessage());
+                    throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
+                })
+                .block();
+        if(Objects.equals(res, "Success")){
+            userRepository.deleteUserByEmail(email);
+        }
+        throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Something went wrong");
+
     }
 
 
@@ -88,7 +104,7 @@ public class UserService {
             throw new RestException(HttpStatus.NOT_FOUND, "User not found");
         }
         user.setName(updateUserDTO.getName() !=null ? updateUserDTO.getName():user.getName());
-        user.setEmail(updateUserDTO.getEmail() !=null ? updateUserDTO.getEmail():user.getEmail());
+//        user.setEmail(updateUserDTO.getEmail() !=null ? updateUserDTO.getEmail():user.getEmail());
         user.setAddress(updateUserDTO.getAddress() !=null ? updateUserDTO.getAddress():user.getAddress());
         user.setTelephone(updateUserDTO.getTelephone() !=null ? updateUserDTO.getTelephone():user.getTelephone());
         user.setGender(updateUserDTO.getGender() !=null ? updateUserDTO.getGender():user.getGender());

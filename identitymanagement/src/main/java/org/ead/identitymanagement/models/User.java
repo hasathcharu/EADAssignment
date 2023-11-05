@@ -2,10 +2,7 @@ package org.ead.identitymanagement.models;
 
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -14,6 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.List;
 
 @Document(value = "user")
 @AllArgsConstructor
@@ -26,12 +24,14 @@ public class User implements UserDetails {
     @Indexed(unique = true)
     private String email;
     private String password;
+    @Getter
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private Collection<Role> roles;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return roles;
     }
 
     @Override

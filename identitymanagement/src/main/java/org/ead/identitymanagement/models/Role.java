@@ -1,8 +1,14 @@
 package org.ead.identitymanagement.models;
 
-public enum Role {
-    USER,
+import org.springframework.security.core.GrantedAuthority;
 
+public enum Role implements GrantedAuthority {
+    USER,
     SELLER,
-    ADMIN
+    ADMIN;
+
+    @Override
+    public String getAuthority() {
+        return null;
+    }
 }

@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 
@@ -34,10 +35,12 @@ public class AuthenticationService {
         if(checkUser!=null){
             return "User exists";
         }
+        ArrayList<Role> roles = new ArrayList<>();
+        roles.add(Role.USER);
         var user = User.builder()
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.USER)
+                .roles(roles)
                 .build();
         repository.save(user);
 
@@ -95,4 +98,9 @@ public class AuthenticationService {
         throw new RestException(HttpStatus.UNAUTHORIZED,"Invalid Credentials");
     }
 
+    public String deleteUser(String email) {
+
+        repository.deleteUserByEmail(email);
+        return "Success";
+    }
 }

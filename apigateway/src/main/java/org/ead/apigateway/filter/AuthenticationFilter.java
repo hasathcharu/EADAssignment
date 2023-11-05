@@ -23,10 +23,10 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
     @Override
     public GatewayFilter apply(Config config) {
         return ((exchange, chain) -> {
+
             //check it contains the header or not. if yes -> validate the token
-            System.out.println("HIHIHI");
-            System.out.println(exchange.getRequest().getMethod());
-            if (validator.isSecured.test(exchange.getRequest())){
+            if (validator.isOpen.test(exchange.getRequest())){
+                System.out.println("Protected Route");
                 //header contains token or not
                 if (!exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION)){
                     throw new RestException(HttpStatus.UNAUTHORIZED, "Missing Token");

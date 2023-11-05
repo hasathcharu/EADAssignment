@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/auth")
+@RequestMapping("/api/auth")
 public class AuthenticationController {
 
     private final AuthenticationService service;
@@ -27,7 +27,12 @@ public class AuthenticationController {
     public ResponseEntity<AuthenticationResponse> authenticate(
             @RequestBody AuthenticationRequest request
     ){
-        System.out.println("hi");
         return ResponseEntity.ok(service.authenticate(request));
     }
+
+    @DeleteMapping("/delete/{email}")
+    public String deleteUser(@PathVariable String email){
+        return service.deleteUser(email);
+    }
+
 }

@@ -5,22 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventorymanagement/InventoryManagement/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/models/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/config/WebClientConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/AuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discoveryserver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discoveryserver/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/models/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/service/AuthenticationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventorymanagement/InventoryManagement/Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/InventoryManagement/Data/DataContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orderplacement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/dto/AuthenticationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/dto/DeleteUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usermanagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,6 +56,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -48,7 +67,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/haritha/Developer/EADAssignment",
+    "last_opened_file_path": "/Users/haritha/Developer/EADAssignment/usermanagement/src/main/java/org/ead/usermanagement",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,11 +76,18 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "spring.configuration.checksum": "3334cb232947f0fd3fb1c1249ae9b1f2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "102f8f762a19539cf4b98ded2f5cb3ef",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/inventorymanagement/InventoryManagement" />
     </key>
@@ -130,6 +156,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Spring Boot.APIGatewayApplication" />
       <item itemvalue="Spring Boot.EurekaServer" />
@@ -151,11 +183,15 @@
       <workItem from="1699191002247" duration="497000" />
       <workItem from="1699191503805" duration="81000" />
       <workItem from="1699191603912" duration="87000" />
-      <workItem from="1699191712222" duration="4764000" />
+      <workItem from="1699191712222" duration="12933000" />
+      <workItem from="1699205014163" duration="5538000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
