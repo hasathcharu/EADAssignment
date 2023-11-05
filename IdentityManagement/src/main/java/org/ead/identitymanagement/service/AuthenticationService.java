@@ -2,7 +2,6 @@ package org.ead.identitymanagement.service;
 
 import lombok.RequiredArgsConstructor;
 import org.ead.identitymanagement.config.JwtService;
-import org.ead.identitymanagement.config.WebClientConfig;
 import org.ead.identitymanagement.dto.AuthenticationRequest;
 import org.ead.identitymanagement.dto.CreateUserDTO;
 import org.ead.identitymanagement.dto.RegisterRequest;
@@ -12,9 +11,7 @@ import org.ead.identitymanagement.models.User;
 import org.ead.identitymanagement.repository.UserRepository;
 import org.ead.identitymanagement.response.AuthenticationResponse;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.client.ClientHttpResponse;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -51,8 +48,6 @@ public class AuthenticationService {
                 .email(request.getEmail())
                 .name(request.getName())
                 .build();
-
-        //make the webclient request to the userManagement
         String res = webClientBuilder.build()
                 .post()
                 .uri("http://UserManagement/api/user")
@@ -69,25 +64,35 @@ public class AuthenticationService {
             return "User Registered";
         }
         throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to register");
-//        var jwtToken = jwtService.generateToken(user);
-//        return AuthenticationResponse.builder()
-//                .token(jwtToken)
-//                .build();
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        request.getEmail(),
-                        request.getPassword()
-                )
-        );
-        var user = repository.findByEmail(request.getEmail())
-                .orElseThrow();
-        var jwtToken = jwtService.generateToken(user);
-        return AuthenticationResponse.builder()
-                .token(jwtToken)
-                .build();
+        try{
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            request.getEmail(),
+                            request.getPassword()
+                    )
+            );
+        }catch(DisabledException e){
+            throw new RestException(HttpStatus.UNAUTHORIZED, "User is disabled");
+        }
+        catch(LockedException e){
+            throw new RestException(HttpStatus.UNAUTHORIZED, "User is locked");
+        }
+        catch(BadCredentialsException e){
+            throw new RestException(HttpStatus.UNAUTHORIZED, "Invalid Credentials");
+        }
+
+        var user = repository.findByEmail(request.getEmail());
+
+        if(user.isPresent()){
+            var jwtToken = jwtService.generateToken(user.get());
+            return AuthenticationResponse.builder()
+                    .token(jwtToken)
+                    .build();
+        }
+        throw new RestException(HttpStatus.UNAUTHORIZED,"Invalid Credentials");
     }
 
 }
