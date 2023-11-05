@@ -31,7 +31,7 @@ public class OrderService {
         //get from user management
         UserDetailsDTO userDetails = webClientBuilder.build()
                 .get()
-                .uri("http://UserManagement/api/user/"+orderRequest.getUserEmail())
+                .uri("http://usermanagement/api/user/"+orderRequest.getUserEmail())
                 .retrieve()
                 .bodyToMono(UserDetailsDTO.class)
                 .onErrorResume(e -> {
@@ -61,7 +61,7 @@ public class OrderService {
         order.setOrderItems(orderItems);
         List<InventoryConfirmDTO> inventoryConfirmDTOList = webClientBuilder.build()
                 .put()
-                .uri("http://InventoryManagement/api/inventory/PlaceOrder")
+                .uri("http://inventorymanagement/api/inventory/PlaceOrder")
                 .bodyValue(orderItems.stream().map(orderItem -> InventoryConfirmDTO.builder()
                         .pid(orderItem.getProductId())
                         .qty(orderItem.getQuantity())
@@ -125,7 +125,7 @@ public class OrderService {
         //send details to inventory management to add back the quantities
         String inventoryConfirmation = webClientBuilder.build()
                 .put()
-                .uri("http://InventoryManagement/api/inventory/CancelOrder")
+                .uri("http://inventorymanagement/api/inventory/CancelOrder")
                 .bodyValue(order.get().getOrderItems().stream().map(orderItem -> InventoryConfirmDTO.builder()
                         .pid(orderItem.getProductId())
                         .qty(orderItem.getQuantity())

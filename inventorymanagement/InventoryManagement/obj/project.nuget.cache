@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Tqrckv728JrHhXJWxxOfjR3HjSbdsIKYqQCUBuh7flPjoD8RdBJF/Cly0n370hOY07PxltKXbiQTrLcavyXvZA==",
+  "dgSpecHash": "aZTjuoj6Jes8TA9UDPllNf8vwORESfR3flzvfJCEo8dQ/WrO4pJJb/wUJzAMHejfSOnpZWm2Et6808QB7lPJ3w==",
   "success": true,
-  "projectFilePath": "/Users/haritha/Developer/ADBMSAssignment/InventoryManagement/InventoryManagement/InventoryManagement.csproj",
+  "projectFilePath": "/Users/haritha/Developer/EADAssignment/inventorymanagement/InventoryManagement/InventoryManagement.csproj",
   "expectedPackageFiles": [
     "/Users/haritha/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/haritha/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

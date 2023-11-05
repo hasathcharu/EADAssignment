@@ -5294,11 +5294,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/haritha/Developer/ADBMSAssignment/InventoryManagement/InventoryManagement/InventoryManagement.csproj",
+      "projectUniqueName": "/Users/haritha/Developer/EADAssignment/inventorymanagement/InventoryManagement/InventoryManagement.csproj",
       "projectName": "InventoryManagement",
-      "projectPath": "/Users/haritha/Developer/ADBMSAssignment/InventoryManagement/InventoryManagement/InventoryManagement.csproj",
+      "projectPath": "/Users/haritha/Developer/EADAssignment/inventorymanagement/InventoryManagement/InventoryManagement.csproj",
       "packagesPath": "/Users/haritha/.nuget/packages/",
-      "outputPath": "/Users/haritha/Developer/ADBMSAssignment/InventoryManagement/InventoryManagement/obj/",
+      "outputPath": "/Users/haritha/Developer/EADAssignment/inventorymanagement/InventoryManagement/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/haritha/.nuget/NuGet/NuGet.Config"

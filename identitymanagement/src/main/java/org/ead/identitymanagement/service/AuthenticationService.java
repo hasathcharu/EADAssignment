@@ -50,7 +50,7 @@ public class AuthenticationService {
                 .build();
         String res = webClientBuilder.build()
                 .post()
-                .uri("http://UserManagement/api/user")
+                .uri("http://usermanagement/api/user")
                 .bodyValue(createUserDTO)
                 .retrieve()
                 .bodyToMono(String.class)
