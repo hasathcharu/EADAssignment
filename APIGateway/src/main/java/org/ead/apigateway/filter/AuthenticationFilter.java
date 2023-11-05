@@ -1,9 +1,11 @@
 package org.ead.apigateway.filter;
 
+import org.ead.apigateway.exception.RestException;
 import org.ead.apigateway.util.JwtUtil;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -22,11 +24,12 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
     public GatewayFilter apply(Config config) {
         return ((exchange, chain) -> {
             //check it contains the header or not. if yes -> validate the token
-
+            System.out.println("HIHIHI");
+            System.out.println(exchange.getRequest().getMethod());
             if (validator.isSecured.test(exchange.getRequest())){
                 //header contains token or not
                 if (!exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION)){
-                    throw new RuntimeException("Missing Authorization Header");
+                    throw new RestException(HttpStatus.UNAUTHORIZED, "Missing Token");
                 }
 
                 String authHeader = exchange.getRequest().getHeaders().get(HttpHeaders.AUTHORIZATION).get(0);
@@ -36,7 +39,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
                     jwtUtil.validateToken(authHeader);
                 }catch (Exception e){
                     System.out.println("Invalid access");
-                    throw new RuntimeException("An unauthorized access to the application");
+                    throw new RestException(HttpStatus.UNAUTHORIZED,"Invalid Token");
                 }
             }
             return chain.filter(exchange);
