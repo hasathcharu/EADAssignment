@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/models/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/config/WebClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discoveryserver/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discoveryserver/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/models/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/service/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermanagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/dto/AuthenticationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/dto/DeleteUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -184,7 +161,7 @@
       <workItem from="1699191503805" duration="81000" />
       <workItem from="1699191603912" duration="87000" />
       <workItem from="1699191712222" duration="12933000" />
-      <workItem from="1699205014163" duration="5538000" />
+      <workItem from="1699205014163" duration="6176000" />
     </task>
     <servers />
   </component>
