@@ -9,9 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @NoArgsConstructor
-public class ProductDetailsDTO {
+public class ProductsResponsePublic {
+    private String pId;
     private String product_name;
     private String product_brand;
     private double price;
-    private double available_quantity;
+    private boolean qty_available;
 }

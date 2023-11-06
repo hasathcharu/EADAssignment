@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/controller/InventoryControllerPublic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/controller/InventoryControllerSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/OrderConfirmedDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/controller/InventoryControllerAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/OrderResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/OrderResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/ProductDetailsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/ProductsResponsePublic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/UpdateProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/UpdateProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/model/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/service/InventoryService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +101,8 @@
       <recent name="org.ead.usermanagement.config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.ead.inventorymanagement.dto" />
+      <recent name="org.ead.inventorymanagement.controller" />
       <recent name="org.ead.orderplacement.controller" />
       <recent name="org.ead.usermanagement.dto" />
     </key>
@@ -102,7 +114,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserManagementApplication">
+  <component name="RunManager" selected="Spring Boot.InventoryManagementApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -196,9 +208,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.InventoryManagementApplication" />
+        <item itemvalue="Spring Boot.APIGatewayApplication" />
         <item itemvalue="Spring Boot.UserManagementApplication" />
         <item itemvalue="Spring Boot.EurekaServer" />
-        <item itemvalue="Spring Boot.APIGatewayApplication" />
       </list>
     </recent_temporary>
   </component>

@@ -15,8 +15,8 @@ public class RouteValidator {
     static {
         publicRoutes.put("/api/auth/public/", Arrays.asList(HttpMethod.POST));
         publicRoutes.put("/discovery", Arrays.asList(HttpMethod.GET));
-//        publicRoutes.put("/api/inventory", Arrays.asList(HttpMethod.GET));
-//        publicRoutes.put("/api/inventory/{PID}", Arrays.asList(HttpMethod.GET));
+        publicRoutes.put("/api/inventory/public", Arrays.asList(HttpMethod.GET));
+        publicRoutes.put("/api/inventory/system", Arrays.asList(HttpMethod.PUT));
     }
     public static final Map<String, List<HttpMethod>> userRoutes = new HashMap<>();
     static {
@@ -28,6 +28,7 @@ public class RouteValidator {
     static {
         adminRoutes.put("/api/user/admin", Arrays.asList(HttpMethod.GET, HttpMethod.DELETE));
         adminRoutes.put("/api/order/admin", Arrays.asList(HttpMethod.GET, HttpMethod.PUT));
+        adminRoutes.put("/api/inventory/admin", Arrays.asList(HttpMethod.GET, HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE));
     }
 
     public Predicate<ServerHttpRequest> isOpen = request -> {

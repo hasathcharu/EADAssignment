@@ -4,15 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @NoArgsConstructor
-public class OrderResponseDTO {
-    private boolean success;
-    private List<OrderConfirmedDTO> products;
-    private List<OrderDTO> failedProducts;
+public class OrderConfirmedDTO extends OrderDTO {
+    private String productId;
+    private Double quantity;
+    private Double price;
 }
