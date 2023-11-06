@@ -2,6 +2,7 @@ package org.ead.identitymanagement.service;
 
 import lombok.RequiredArgsConstructor;
 import org.ead.identitymanagement.config.JwtService;
+import org.ead.identitymanagement.dto.AssignRole;
 import org.ead.identitymanagement.dto.AuthenticationRequest;
 import org.ead.identitymanagement.dto.CreateUserDTO;
 import org.ead.identitymanagement.dto.RegisterRequest;
@@ -18,6 +19,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -105,6 +108,46 @@ public class AuthenticationService {
             System.out.println(e.getMessage());
             throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Something went wrong");
         }
+        return "Success";
+    }
+
+    public String assignRole(AssignRole request) {
+        User user = repository.findByEmail(request.getEmail()).orElse(null);
+        if(user==null){
+            throw new RestException(HttpStatus.NOT_FOUND, "User not found");
+        }
+        Collection<Role> currentRoles = user.getRoles();
+        if(request.getRole().equals("ADMIN")){
+            currentRoles.add(Role.ADMIN);
+        }
+        else if(request.getRole().equals("DELIVERER")){
+            currentRoles.add(Role.DELIVERER);
+        }
+        else{
+            throw new RestException(HttpStatus.BAD_REQUEST, "Invalid role");
+        }
+        user.setRoles(currentRoles);
+        repository.save(user);
+        return "Success";
+    }
+
+    public String removeRole(AssignRole request) {
+        User user = repository.findByEmail(request.getEmail()).orElse(null);
+        if(user==null){
+            throw new RestException(HttpStatus.NOT_FOUND, "User not found");
+        }
+        Collection<Role> currentRoles = user.getRoles();
+        if(request.getRole().equals("ADMIN")){
+            currentRoles.remove(Role.ADMIN);
+        }
+        else if(request.getRole().equals("DELIVERER")){
+            currentRoles.remove(Role.DELIVERER);
+        }
+        else{
+            throw new RestException(HttpStatus.BAD_REQUEST, "Invalid role");
+        }
+        user.setRoles(currentRoles);
+        repository.save(user);
         return "Success";
     }
 }

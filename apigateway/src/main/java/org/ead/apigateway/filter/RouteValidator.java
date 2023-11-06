@@ -33,6 +33,7 @@ public class RouteValidator {
         adminRoutes.put("/api/user/admin", Arrays.asList(HttpMethod.GET, HttpMethod.DELETE));
         adminRoutes.put("/api/order/admin", Arrays.asList(HttpMethod.GET, HttpMethod.PUT));
         adminRoutes.put("/api/inventory/admin", Arrays.asList(HttpMethod.GET, HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE));
+        adminRoutes.put("/api/auth/admin/", Arrays.asList(HttpMethod.PUT));
     }
 
     public Predicate<ServerHttpRequest> isOpen = request -> {
