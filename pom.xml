@@ -19,6 +19,7 @@
         <module>discoveryserver</module>
         <module>apigateway</module>
         <module>identitymanagement</module>
+        <module>inventorymanagement</module>
     </modules>
 
     <properties>

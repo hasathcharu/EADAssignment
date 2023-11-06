@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="" />
+    <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/InventoryManagementApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/controller/InventoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/ErrorDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/NewProductDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/OrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/ProductDetailsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/ProductsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/UpdateProductDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/exception/RestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/model/Inventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/repository/InventoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/service/InventoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,17 +34,24 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2Xl5PIUdRInZhSoOjN3EBdjs5tu" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -43,13 +70,15 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/haritha/Developer/EADAssignment/usermanagement/src/main/java/org/ead/usermanagement",
+    "git-widget-placeholder": "inventory-management",
+    "jdk.selected.JAVA_MODULE": "corretto-20",
+    "last_opened_file_path": "D:/L3S1/IN3100 - Enterprise Application Development/EADAssignment/inventorymanagement/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "D:/L3S1/IN3100 - Enterprise Application Development/EADAssignment/inventorymanagement/src/main/java/org/ead/inventorymanagement/Main.java",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -62,11 +91,19 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.ead.inventorymanagement.dto" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\L3S1\IN3100 - Enterprise Application Development\EADAssignment\inventorymanagement\src\main\resources" />
       <recent name="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/inventorymanagement/InventoryManagement" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.ead.inventorymanagement.dto" />
+      <recent name="org.ead.inventorymanagement.exception" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -76,20 +113,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.OrderPlacementApplication">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.InventoryManagementApplication">
     <configuration name="APIGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-17" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-20" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="apigateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.apigateway.APIGatewayApplication" />
@@ -111,6 +137,19 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="identitymanagement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.identitymanagement.IdentityManagementApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="inventorymanagement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.inventorymanagement.InventoryManagementApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ead.inventorymanagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -145,7 +184,13 @@
       <item itemvalue="Spring Boot.IdentityManagementApplication" />
       <item itemvalue="Spring Boot.OrderPlacementApplication" />
       <item itemvalue="Spring Boot.UserManagementApplication" />
+      <item itemvalue="Spring Boot.InventoryManagementApplication" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.InventoryManagementApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -162,6 +207,7 @@
       <workItem from="1699191603912" duration="87000" />
       <workItem from="1699191712222" duration="12933000" />
       <workItem from="1699205014163" duration="6176000" />
+      <workItem from="1699241873104" duration="16722000" />
     </task>
     <servers />
   </component>
