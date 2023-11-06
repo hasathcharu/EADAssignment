@@ -2,10 +2,7 @@ package org.ead.identitymanagement.service;
 
 import lombok.RequiredArgsConstructor;
 import org.ead.identitymanagement.config.JwtService;
-import org.ead.identitymanagement.dto.AssignRole;
-import org.ead.identitymanagement.dto.AuthenticationRequest;
-import org.ead.identitymanagement.dto.CreateUserDTO;
-import org.ead.identitymanagement.dto.RegisterRequest;
+import org.ead.identitymanagement.dto.*;
 import org.ead.identitymanagement.exception.RestException;
 import org.ead.identitymanagement.models.Role;
 import org.ead.identitymanagement.models.User;
@@ -147,6 +144,19 @@ public class AuthenticationService {
             throw new RestException(HttpStatus.BAD_REQUEST, "Invalid role");
         }
         user.setRoles(currentRoles);
+        repository.save(user);
+        return "Success";
+    }
+
+    public String changePassword(ChangePasswordDTO request, String email) {
+        User user = repository.findByEmail(email).orElse(null);
+        if(user==null){
+            throw new RestException(HttpStatus.NOT_FOUND, "User not found");
+        }
+        if(!passwordEncoder.matches(request.getOldPassword(), user.getPassword())){
+            throw new RestException(HttpStatus.BAD_REQUEST, "Invalid old password");
+        }
+        user.setPassword(passwordEncoder.encode(request.getNewPassword()));
         repository.save(user);
         return "Success";
     }

@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/controller/AuthenticationControllerAdmin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/dto/AssignRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/controller/AuthenticationControllerBasic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/dto/ChangePasswordDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/SecurityConfiguration.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/service/AuthenticationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
