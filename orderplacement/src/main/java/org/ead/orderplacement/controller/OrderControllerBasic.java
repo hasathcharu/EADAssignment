@@ -6,7 +6,6 @@ import org.ead.orderplacement.dto.OrderResponse;
 import org.ead.orderplacement.dto.OrdersResponse;
 import org.ead.orderplacement.service.OrderService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -34,9 +33,8 @@ public class OrderControllerBasic {
 
     @DeleteMapping("/{orderNumber}")
     @ResponseStatus(HttpStatus.OK)
-    public String cancelOrder(@PathVariable String orderNumber, @RequestHeader("X-User-Email") String userEmail){
-        orderService.cancelOrder(orderNumber, userEmail);
-        return "Success";
+    public OrderResponse cancelOrder(@PathVariable String orderNumber, @RequestHeader("X-User-Email") String userEmail){
+        return orderService.cancelOrder(orderNumber, userEmail);
     }
 
 }

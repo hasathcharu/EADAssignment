@@ -10,6 +10,5 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderRequest {
-  private String userTelephone;
   private List<OrderItemDTO> orderItems;
 }

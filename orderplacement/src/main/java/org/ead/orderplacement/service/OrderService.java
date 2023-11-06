@@ -136,7 +136,7 @@ public class OrderService {
         return mapToOrderResponse(order.get());
     }
 
-    public void cancelOrder(String orderNumber, String userEmail) {
+    public OrderResponse cancelOrder(String orderNumber, String userEmail) {
         Order order = orderRepository.findByOrderNumber(orderNumber).orElse(null);
         if(order == null){
             throw new RestException(HttpStatus.NOT_FOUND, "Order not found");
@@ -148,25 +148,26 @@ public class OrderService {
             throw new RestException(HttpStatus.FORBIDDEN, "Order is not cancellable");
         }
         order.setStatus(OrderStatus.CANCELLED);
+
         //send details to inventory management to add back the quantities
-//        String inventoryConfirmation = webClientBuilder.build()
-//                .put()
-//                .uri("http://inventorymanagement/api/inventory/CancelOrder")
-//                .bodyValue(order.get().getOrderItems().stream().map(orderItem -> InventoryConfirmDTO.builder()
-//                        .pid(orderItem.getProductId())
-//                        .qty(orderItem.getQuantity())
-//                        .build()).toList())
-//                .retrieve()
-//                .bodyToMono(String.class)
-//                .onErrorResume(e -> {
-//                    System.out.println(e.getMessage());
-//                    throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
-//                })
-//                .block();
-//        if(inventoryConfirmation == null){
-//            throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
-//        }
+        String inventoryConfirmation = webClientBuilder.build()
+                .put()
+                .uri("http://inventorymanagement/api/inventory/system/cancel-order")
+                .bodyValue(order.getOrderItems().stream().map(orderItem -> InventoryConfirmDTO.builder()
+                        .productId(orderItem.getProductId())
+                        .quantity(orderItem.getQuantity())
+                        .build()).toList())
+                .retrieve()
+                .bodyToMono(String.class)
+                .onErrorResume(e -> {
+                    throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
+                })
+                .block();
+        if(!Objects.equals(inventoryConfirmation, "Success")){
+            throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Something went wrong cancelling order");
+        }
         orderRepository.save(order);
+        return mapToOrderResponse(order);
     }
     public OrderResponse updateStatus(String orderNumber) {
         Optional<Order> order = orderRepository.findByOrderNumber(orderNumber);
