@@ -52,8 +52,14 @@ public class InventoryController {
 
     @PutMapping("/place-order")
     @ResponseStatus(HttpStatus.OK)
-    public String placeOrder(@RequestBody List<OrderDTO> products){
-        return inventoryService.placeOrder(products);
+    public ResponseEntity<OrderResponseDTO> placeOrder(@RequestBody List<OrderDTO> products){
+        OrderResponseDTO response = inventoryService.placeOrder(products);
+
+        if (response.isSuccess()) {
+            return ResponseEntity.ok(response);
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        }
     }
 
     @PutMapping("/cancel-order")

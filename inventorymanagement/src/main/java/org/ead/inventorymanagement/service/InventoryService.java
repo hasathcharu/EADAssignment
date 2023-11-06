@@ -94,29 +94,34 @@ public class InventoryService {
         inventoryRepository.deleteById(id);
     }
 
-    public String placeOrder(List<OrderDTO> products) {
-        try {
-            List<Inventory> inventoryToUpdate = new ArrayList<>();
+    public OrderResponseDTO placeOrder(List<OrderDTO> products) {
 
-            for (OrderDTO product : products) {
-                Inventory productItem = inventoryRepository.findById(new ObjectId(product.getProductId())).orElse(null);
-                if (productItem == null) {
-                    throw new RestException(HttpStatus.NOT_FOUND, "Product not found");
-                }
+        OrderResponseDTO response = new OrderResponseDTO();
+        List<OrderDTO> productsWithInsufficientStock = new ArrayList<>();
+        List<Inventory> inventoryToUpdate = new ArrayList<>();
 
-                if (productItem.getAvailable_quantity() >= product.getQuantity()) {
-                    productItem.setAvailable_quantity(productItem.getAvailable_quantity() - product.getQuantity());
-                    inventoryToUpdate.add(productItem);
-                } else {
-                    throw new Exception("Not in stock");
-                    //
-                }
+
+        for (OrderDTO product : products) {
+            Inventory productItem = inventoryRepository.findById(new ObjectId(product.getProductId())).orElse(null);
+            if (productItem == null) {
+                throw new RestException(HttpStatus.NOT_FOUND, "Product not found");
+            } else if (productItem.getAvailable_quantity() >= product.getQuantity()) {
+                productItem.setAvailable_quantity(productItem.getAvailable_quantity() - product.getQuantity());
+                inventoryToUpdate.add(productItem);
+            } else {
+                productsWithInsufficientStock.add(product);
             }
-            inventoryRepository.saveAll(inventoryToUpdate);
-            return "Order placed successfully";
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
+
+        if (!productsWithInsufficientStock.isEmpty()) {
+            response.setSuccess(false);
+            response.setProducts(productsWithInsufficientStock);
+        } else {
+            inventoryRepository.saveAll(inventoryToUpdate);
+            response.setSuccess(true);
+        }
+
+        return response;
     }
 
     public boolean cancelOrder(List<OrderDTO> products) {
