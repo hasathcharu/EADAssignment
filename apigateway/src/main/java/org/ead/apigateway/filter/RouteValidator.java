@@ -16,7 +16,6 @@ public class RouteValidator {
         publicRoutes.put("/api/auth/public/", Arrays.asList(HttpMethod.POST));
         publicRoutes.put("/discovery", Arrays.asList(HttpMethod.GET));
         publicRoutes.put("/api/inventory/public", Arrays.asList(HttpMethod.GET));
-        publicRoutes.put("/api/inventory/system", Arrays.asList(HttpMethod.PUT));
     }
     public static final Map<String, List<HttpMethod>> userRoutes = new HashMap<>();
     static {

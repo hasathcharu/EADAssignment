@@ -1,34 +1,8 @@
 version: '3'
 services:
-  mysql:
-    container_name: mysql_server
-    image: mysql
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 1
-    ports:
-      - "3306:3306"
-    volumes:
-      - "./mysql-data:/var/lib/mysql"
-    expose:
-      - "3306"
-  mssql:
-    container_name: mssql_server
-    image: mcr.microsoft.com/azure-sql-edge
-    restart: always
-    volumes:
-      - "./mssql-data:/var/opt/mssql"
-    environment:
-      ACCEPT_EULA: Y
-      SA_PASSWORD: Haritha@123
-    ports:
-      - "1433:1433"
-    expose:
-      - "1433"
   discoveryserver:
     container_name: discovery_server
-    image: discoveryserver:1.0
+    image: discoveryserver:2.0
     restart: always
     ports:
       - "8761:8761"
@@ -36,7 +10,7 @@ services:
       - "8761"
   apigateway:
     container_name: api_gateway
-    image: apigateway:1.0
+    image: apigateway:2.0
     restart: always
     depends_on:
       - discoveryserver
@@ -46,30 +20,28 @@ services:
       - "80"
   inventorymanagement:
     container_name: inventory_management
-    image: inventorymanagement:1.21
+    image: inventorymanagement:2.0
     restart: always
     depends_on:
-      - mssql
       - apigateway
       - discoveryserver
   usermanagement:
     container_name: user_management
-    image: usermanagement:1.0
+    image: usermanagement:2.0
     restart: always
     depends_on:
       - apigateway
       - discoveryserver
   orderplacement:
     container_name: order_placement
-    image: orderplacement:1.0
+    image: orderplacement:2.0
     restart: always
     depends_on:
-      - mysql
       - apigateway
       - discoveryserver
   identitymanagement:
     container_name: identity_management
-    image: identitymanagement:1.0
+    image: identitymanagement:2.0
     restart: always
     depends_on:
       - apigateway

@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/apigateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/discoveryserver/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/identitymanagement/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/identitymanagement/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/inventorymanagement/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/orderplacement/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
