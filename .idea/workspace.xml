@@ -28,13 +28,18 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2Xl5PIUdRInZhSoOjN3EBdjs5tu" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -72,7 +77,11 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.ead.inventorymanagement.dto" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\L3S1\IN3100 - Enterprise Application Development\EADAssignment\inventorymanagement\src\main\resources" />
       <recent name="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -138,6 +147,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="InventoryManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="inventorymanagement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.inventorymanagement.InventoryManagementApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ead.inventorymanagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OrderPlacementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="orderplacement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.orderplacement.OrderPlacementApplication" />
@@ -170,6 +192,7 @@
       <item itemvalue="Spring Boot.APIGatewayApplication" />
       <item itemvalue="Spring Boot.EurekaServer" />
       <item itemvalue="Spring Boot.UserManagementApplication" />
+      <item itemvalue="Spring Boot.InventoryManagementApplication" />
     </list>
     <recent_temporary>
       <list>
