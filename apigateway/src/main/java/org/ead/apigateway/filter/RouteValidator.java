@@ -13,8 +13,8 @@ public class RouteValidator {
 
     public static final Map<String, List<HttpMethod>> publicRoutes = new HashMap<>();
     static {
-        publicRoutes.put("/api/auth/authenticate", Arrays.asList(HttpMethod.POST));
-        publicRoutes.put("/api/auth/register", Arrays.asList(HttpMethod.POST));
+        publicRoutes.put("/api/auth/public/authenticate", Arrays.asList(HttpMethod.POST));
+        publicRoutes.put("/api/auth/public/register", Arrays.asList(HttpMethod.POST));
         publicRoutes.put("/discovery", Arrays.asList(HttpMethod.GET));
         publicRoutes.put("/api/inventory", Arrays.asList(HttpMethod.GET));
         publicRoutes.put("/api/inventory/{PID}", Arrays.asList(HttpMethod.GET));

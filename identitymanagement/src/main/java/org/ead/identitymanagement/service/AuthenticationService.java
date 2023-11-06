@@ -59,7 +59,7 @@ public class AuthenticationService {
                 .bodyToMono(String.class)
                 .onErrorResume(e -> {
                     System.out.println(e.getMessage());
-                    throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
+                    throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to user management");
                 })
                 .block();
 
