@@ -53,7 +53,7 @@ public class AuthenticationService {
                 .build();
         String res = webClientBuilder.build()
                 .post()
-                .uri("http://usermanagement/api/user")
+                .uri("http://usermanagement/api/user/system")
                 .bodyValue(createUserDTO)
                 .retrieve()
                 .bodyToMono(String.class)
@@ -99,8 +99,12 @@ public class AuthenticationService {
     }
 
     public String deleteUser(String email) {
-
-        repository.deleteUserByEmail(email);
+        try {
+            repository.deleteUserByEmail(email);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Something went wrong");
+        }
         return "Success";
     }
 }

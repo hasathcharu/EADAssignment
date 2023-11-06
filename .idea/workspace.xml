@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/controller/AuthenticationControllerSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/controller/UserControllerAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/controller/UserControllerSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/dto/UpdateUserBasicDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/controller/AuthenticationControllerPublic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/controller/AuthenticationControllerSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/controller/AuthenticationControllerSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/controller/UserControllerBasic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/dto/UpdateUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/dto/UpdateUserAdminDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +81,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/inventorymanagement/InventoryManagement" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.ead.usermanagement.dto" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -168,7 +178,7 @@
       <workItem from="1699191503805" duration="81000" />
       <workItem from="1699191603912" duration="87000" />
       <workItem from="1699191712222" duration="12933000" />
-      <workItem from="1699205014163" duration="8374000" />
+      <workItem from="1699205014163" duration="12532000" />
     </task>
     <servers />
   </component>

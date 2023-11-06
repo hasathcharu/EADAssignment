@@ -15,6 +15,7 @@ public class RouteValidator {
     static {
         publicRoutes.put("/api/auth/public/authenticate", Arrays.asList(HttpMethod.POST));
         publicRoutes.put("/api/auth/public/register", Arrays.asList(HttpMethod.POST));
+        publicRoutes.put("/api/auth/admin/", Arrays.asList(HttpMethod.DELETE));
         publicRoutes.put("/discovery", Arrays.asList(HttpMethod.GET));
         publicRoutes.put("/api/inventory", Arrays.asList(HttpMethod.GET));
         publicRoutes.put("/api/inventory/{PID}", Arrays.asList(HttpMethod.GET));

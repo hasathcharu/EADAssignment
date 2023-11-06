@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthenticationControllerSystem {
 
     private final AuthenticationService service;
-    @DeleteMapping("/delete/{email}")
+    @DeleteMapping("/{email}")
     public String deleteUser(@PathVariable String email){
+        System.out.println("Hello auth");
         return service.deleteUser(email);
     }
 }

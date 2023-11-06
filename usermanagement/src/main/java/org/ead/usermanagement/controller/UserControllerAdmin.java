@@ -1,7 +1,9 @@
 package org.ead.usermanagement.controller;
 
+
 import lombok.RequiredArgsConstructor;
-import org.ead.usermanagement.dto.*;
+import org.ead.usermanagement.dto.UserDetailsDTO;
+import org.ead.usermanagement.dto.UsersResponse;
 import org.ead.usermanagement.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -9,18 +11,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/user/admin")
 @RequiredArgsConstructor
-public class UserController {
-
+public class UserControllerAdmin {
 
     private final UserService userService;
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public String createUser(@RequestBody NewUserDTO newUserDTO){
-        userService.createUser(newUserDTO);
-        return "Success";
-    }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
@@ -30,7 +25,7 @@ public class UserController {
 
     @GetMapping("/{email}")
     @ResponseStatus(HttpStatus.OK)
-    public UserDetailsDTO getUserDetails(@PathVariable String email){
+    public UserDetailsDTO getUser(@PathVariable String email){
         return userService.getUserDetails(email);
     }
 
@@ -38,13 +33,6 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public String deleteUser(@PathVariable String email){
         userService.deleteUser(email);
-        return "Success";
-    }
-
-    @PutMapping()
-    @ResponseStatus(HttpStatus.OK)
-    public String updateUser(@RequestBody UpdateUserDTO updateUserDTO){
-        userService.updateUser(updateUserDTO);
         return "Success";
     }
 }

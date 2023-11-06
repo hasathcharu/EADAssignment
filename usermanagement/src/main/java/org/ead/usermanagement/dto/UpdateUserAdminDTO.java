@@ -4,15 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @NoArgsConstructor
-public class UpdateUserDTO {
-    private String name;
+public class UpdateUserAdminDTO extends UpdateUserBasicDTO {
     private String email;
-    private String gender;
-    private String telephone;
-    private String address;
 }
