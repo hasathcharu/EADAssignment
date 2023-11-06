@@ -118,10 +118,25 @@ public class OrderService {
         return mapToOrderResponse(order.get());
     }
 
-    public void cancelOrder(String orderNumber) {
+    public OrderResponse getOrder(String orderNumber, String userEmail) {
+        Optional<Order> order = orderRepository.findByOrderNumber(orderNumber);
+        if(order.isEmpty()){
+            throw new RestException(HttpStatus.NOT_FOUND, "Order not found");
+        }
+        System.out.println(userEmail);
+        if(!order.get().getUserEmail().equals(userEmail)){
+            throw new RestException(HttpStatus.UNAUTHORIZED, "Unauthorized Access");
+        }
+        return mapToOrderResponse(order.get());
+    }
+
+    public void cancelOrder(String orderNumber, String userEmail) {
         Order order = orderRepository.findByOrderNumber(orderNumber).orElse(null);
         if(order == null){
             throw new RestException(HttpStatus.NOT_FOUND, "Order not found");
+        }
+        if(!order.getUserEmail().equals(userEmail)){
+            throw new RestException(HttpStatus.UNAUTHORIZED, "Unauthorized Access");
         }
         if(order.getStatus() != OrderStatus.PLACED){
             throw new RestException(HttpStatus.FORBIDDEN, "Order is not cancellable");

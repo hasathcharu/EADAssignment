@@ -10,6 +10,9 @@ import java.util.Optional;
 
 public interface OrderRepository extends MongoRepository<Order, ObjectId> {
     Optional<Order> findByOrderNumber(String orderNumber);
+
     List<Order> findAllByUserEmail(String email);
+
+
 }
 

@@ -99,7 +99,7 @@ public class UserService {
     }
 
 
-    public void updateUser(UpdateUserBasicDTO updateUserDTO, String email) {
+    public UserDetailsDTO updateUser(UpdateUserBasicDTO updateUserDTO, String email) {
         User user = userRepository.findByEmail(email).orElse(null);
         if(user==null){
             throw new RestException(HttpStatus.NOT_FOUND, "User not found");
@@ -110,5 +110,6 @@ public class UserService {
         user.setTelephone(updateUserDTO.getTelephone() !=null ? updateUserDTO.getTelephone():user.getTelephone());
         user.setGender(updateUserDTO.getGender() !=null ? updateUserDTO.getGender():user.getGender());
         userRepository.save(user);
+        return mapToUserDetailsDTO(user);
     }
 }

@@ -18,22 +18,22 @@ public class UserControllerBasic {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public UserDetailsDTO getUser(){
-        return userService.getUserDetails("test@hasathcharu.com");
+    public UserDetailsDTO getUser(@RequestHeader("X-User-Email") String userEmail){
+        return userService.getUserDetails(userEmail);
     }
 
 
     @DeleteMapping()
     @ResponseStatus(HttpStatus.OK)
-    public String deleteUser(){
-        userService.deleteUser("test@hasathcharu.com");
+    public String deleteUser(@RequestHeader("X-User-Email") String userEmail){
+        userService.deleteUser(userEmail);
         return "Success";
     }
 
     @PutMapping()
     @ResponseStatus(HttpStatus.OK)
-    public String updateUser(@RequestBody UpdateUserBasicDTO updateUserDTO){
-        userService.updateUser(updateUserDTO, "test@hasathcharu.com");
-        return "Success";
+    public UserDetailsDTO updateUser(@RequestBody UpdateUserBasicDTO updateUserDTO, @RequestHeader("X-User-Email") String userEmail){
+        return userService.updateUser(updateUserDTO, userEmail);
+
     }
 }
