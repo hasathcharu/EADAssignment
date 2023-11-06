@@ -4,7 +4,170 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="" />
+    <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/.vs/InventoryManagement/xs/UserPrefs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/.vs/InventoryManagement/xs/project-cache/InventoryManagement-Debug.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/.vs/InventoryManagement/xs/UserPrefs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/.vs/InventoryManagement/xs/project-cache/InventoryManagement-Debug.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/Controllers/InventoryController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/DTO/OrderDTO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/Data/DataContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/InventoryManagement.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/InventoryManagement.csproj.user" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/InventoryManagement.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/Migrations/20230902100617_InitialMigration.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/Migrations/20230902100617_InitialMigration.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/Migrations/DataContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/Models/InventoryModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/Properties/launchSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/Services/IInventoryService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/Services/InventoryServices.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/AutoMapper.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Azure.Core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Azure.Identity.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Humanizer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/InventoryManagement" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/InventoryManagement.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/InventoryManagement.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/InventoryManagement.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/InventoryManagement.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Extensions.Caching.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Extensions.Logging.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Extensions.Options.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Identity.Client.Extensions.Msal.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Identity.Client.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.IdentityModel.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.OpenApi.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.SqlServer.Server.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Mono.TextTemplating.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Steeltoe.Common.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Steeltoe.Common.Hosting.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Steeltoe.Common.Http.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Steeltoe.Common.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Steeltoe.Connector.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Steeltoe.Connector.ConnectorBase.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Steeltoe.Discovery.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Steeltoe.Discovery.ClientBase.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Steeltoe.Discovery.Eureka.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Steeltoe.Extensions.Configuration.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/System.CodeDom.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/System.Drawing.Common.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/System.IO.Hashing.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/System.Memory.Data.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/System.Reflection.MetadataLoadContext.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/System.Runtime.Caching.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/System.Security.Permissions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/System.Text.Encodings.Web.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/System.Text.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/System.Windows.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/Yarp.ReverseProxy.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.GlobalUsings.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.MvcApplicationPartsAssemblyInfo.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.csproj.BuildWithSkipAnalyzers" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.csproj.CopyComplete" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.genruntimeconfig.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/InventoryManagement.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/apphost" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/apphost.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/ref/InventoryManagement.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/refint/InventoryManagement.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/staticwebassets.build.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/staticwebassets/msbuild.build.InventoryManagement.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.InventoryManagement.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.InventoryManagement.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/InventoryManagement.csproj.EntityFrameworkCore.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/InventoryManagement.csproj.nuget.dgspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/InventoryManagement.csproj.nuget.g.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/InventoryManagement.csproj.nuget.g.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.GlobalUsings.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.MvcApplicationPartsAssemblyInfo.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.csproj.CopyComplete" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.genruntimeconfig.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/InventoryManagement.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/PublishOutputs.82072c3da8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/apphost" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/ref/InventoryManagement.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/refint/InventoryManagement.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/staticwebassets.build.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/staticwebassets.publish.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/staticwebassets/msbuild.build.InventoryManagement.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/staticwebassets/msbuild.buildMultiTargeting.InventoryManagement.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/Release/net6.0/staticwebassets/msbuild.buildTransitive.InventoryManagement.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/project.assets.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement_b/InventoryManagement/obj/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,59 +177,84 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2Xl5PIUdRInZhSoOjN3EBdjs5tu" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/haritha/Developer/EADAssignment/usermanagement/src/main/java/org/ead/usermanagement",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "102f8f762a19539cf4b98ded2f5cb3ef",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;role-based&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/haritha/Developer/EADAssignment/usermanagement/src/main/java/org/ead/usermanagement&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;102f8f762a19539cf4b98ded2f5cb3ef&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.ead.inventorymanagement.dto" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\L3S1\IN3100 - Enterprise Application Development\EADAssignment\inventorymanagement\src\main\resources" />
       <recent name="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/inventorymanagement/InventoryManagement" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.ead.usermanagement.config" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.ead.identitymanagement.controller" />
+      <recent name="org.ead.orderplacement.controller" />
+      <recent name="org.ead.inventorymanagement.dto" />
+      <recent name="org.ead.inventorymanagement.controller" />
+      <recent name="org.ead.usermanagement.dto" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -88,47 +276,68 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="APIGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <configuration name="APIGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="apigateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.apigateway.APIGatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ead.apigateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-20" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <configuration name="EurekaServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="discoveryserver" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.eurekaserver.EurekaServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ead.eurekaserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="IdentityManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-20" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="identitymanagement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.identitymanagement.IdentityManagementApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="InventoryManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="inventorymanagement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.inventorymanagement.InventoryManagementApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ead.inventorymanagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OrderPlacementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-20" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="orderplacement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.orderplacement.OrderPlacementApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-20" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <configuration name="UserManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="usermanagement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.usermanagement.UserManagementApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ead.usermanagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,12 +349,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.APIGatewayApplication" />
-      <item itemvalue="Spring Boot.EurekaServer" />
       <item itemvalue="Spring Boot.IdentityManagementApplication" />
       <item itemvalue="Spring Boot.OrderPlacementApplication" />
+      <item itemvalue="Spring Boot.APIGatewayApplication" />
+      <item itemvalue="Spring Boot.EurekaServer" />
       <item itemvalue="Spring Boot.UserManagementApplication" />
+      <item itemvalue="Spring Boot.InventoryManagementApplication" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.APIGatewayApplication" />
+        <item itemvalue="Spring Boot.InventoryManagementApplication" />
+        <item itemvalue="Spring Boot.UserManagementApplication" />
+        <item itemvalue="Spring Boot.EurekaServer" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -161,12 +379,27 @@
       <workItem from="1699191503805" duration="81000" />
       <workItem from="1699191603912" duration="87000" />
       <workItem from="1699191712222" duration="12933000" />
-      <workItem from="1699205014163" duration="6176000" />
+      <workItem from="1699205014163" duration="28461000" />
+      <workItem from="1699265665604" duration="499000" />
+      <workItem from="1699266216725" duration="2751000" />
+      <workItem from="1699269262475" duration="566000" />
+      <workItem from="1699290077375" duration="3846000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

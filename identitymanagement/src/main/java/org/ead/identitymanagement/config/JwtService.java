@@ -35,13 +35,12 @@ public class JwtService {
             Map<String, Object> extraClaims,
             UserDetails userDetails
     ){
-        System.out.println(userDetails.getAuthorities());
         return Jwts.builder()
                 .setClaims(extraClaims)
                 .setSubject(userDetails.getUsername())
                 .claim("roles", userDetails.getAuthorities())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))  //24hrs + 1000ms
+                .setExpiration(new Date(System.currentTimeMillis() + 1000L * 60 * 60 * 24))  //24hrs + 1000ms
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
     }

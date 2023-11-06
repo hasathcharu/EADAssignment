@@ -2,6 +2,8 @@ package org.ead.orderplacement.model;
 
 public enum OrderStatus {
     PLACED,
-    COMPLETED,
+    PROCESSED,
+    DISPATCHED,
+    DELIVERED,
     CANCELLED,
 }

@@ -24,14 +24,14 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
     private final WebClient.Builder webClientBuilder;
-    public OrderResponse placeOrder(OrderRequest orderRequest)  {
+    public OrderResponse placeOrder(OrderRequest orderRequest, String userEmail)  {
 
         Order order = new Order();
 
         //get from user management
         UserDetailsDTO userDetails = webClientBuilder.build()
                 .get()
-                .uri("http://usermanagement/api/user/"+orderRequest.getUserEmail())
+                .uri("http://usermanagement/api/user/system/"+userEmail)
                 .retrieve()
                 .bodyToMono(UserDetailsDTO.class)
                 .onErrorResume(e -> {
@@ -59,39 +59,50 @@ public class OrderService {
                 .toList();
 
         order.setOrderItems(orderItems);
-        List<InventoryConfirmDTO> inventoryConfirmDTOList = webClientBuilder.build()
+        InventoryResponseDTO inventoryResponseDTO = webClientBuilder.build()
                 .put()
-                .uri("http://inventorymanagement/api/inventory/PlaceOrder")
+                .uri("http://inventorymanagement/api/inventory/system/place-order")
                 .bodyValue(orderItems.stream().map(orderItem -> InventoryConfirmDTO.builder()
-                        .pid(orderItem.getProductId())
-                        .qty(orderItem.getQuantity())
+                        .productId(orderItem.getProductId())
+                        .quantity(orderItem.getQuantity())
                         .build()).toList())
                 .retrieve()
-                .bodyToFlux(InventoryConfirmDTO.class)
+                .bodyToMono(InventoryResponseDTO.class)
                 .onErrorResume(e -> {
-                    System.out.println(e.getMessage());
                     if(e.getMessage().contains("404")){
-                        throw new RestException(HttpStatus.NOT_FOUND, "Product(s) out of stock");
+                        throw new RestException(HttpStatus.NOT_FOUND, "Product(s) not available");
                     }
-                    else{
-                        throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
-                    }
+                    throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
                 })
-                .collectList().block();
-        if(inventoryConfirmDTOList == null){
-            throw new RestException(HttpStatus.NOT_FOUND, "Product(s) out of stock");
+                .block();
+        if(inventoryResponseDTO == null){
+            throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
         }
-        //set prices
+        if(!inventoryResponseDTO.isSuccess()){
+            String outOfStock = inventoryResponseDTO.getFailedProducts().toString();
+            throw new RestException(HttpStatus.NOT_FOUND, "Product(s) out of stock: "+outOfStock);
+        }
         for(OrderItem orderItem: orderItems){
-            for(InventoryConfirmDTO inventoryConfirmDTO: inventoryConfirmDTOList){
-                if(orderItem.getProductId() == inventoryConfirmDTO.getPid()){
+            for(InventoryConfirmDTO inventoryConfirmDTO: inventoryResponseDTO.getProducts()){
+                if(orderItem.getProductId().equals(inventoryConfirmDTO.getProductId())){
                     orderItem.setPrice(inventoryConfirmDTO.getPrice());
+                    break;
                 }
             }
         }
         order.setDate(new Date());
         order.setStatus(OrderStatus.PLACED);
-        order.setOrderNumber(generateOrderNumber(order));
+
+        String orderNumber;
+        while(true){
+            orderNumber = generateOrderNumber(order);
+            Optional<Order> checkOrder = orderRepository.findByOrderNumber(orderNumber);
+            if(checkOrder.isEmpty()){
+                break;
+            }
+        }
+        order.setOrderNumber(orderNumber);
+        order.setOrderItems(orderItems);
         this.orderRepository.save(order);
         return mapToOrderResponse(order);
     }
@@ -113,52 +124,101 @@ public class OrderService {
         return mapToOrderResponse(order.get());
     }
 
-    public void cancelOrder(String orderNumber) {
+    public OrderResponse getOrder(String orderNumber, String userEmail) {
         Optional<Order> order = orderRepository.findByOrderNumber(orderNumber);
         if(order.isEmpty()){
             throw new RestException(HttpStatus.NOT_FOUND, "Order not found");
         }
-        if(order.get().getStatus() == OrderStatus.COMPLETED){
-            throw new RestException(HttpStatus.FORBIDDEN, "Order completed");
+        System.out.println(userEmail);
+        if(!order.get().getUserEmail().equals(userEmail)){
+            throw new RestException(HttpStatus.UNAUTHORIZED, "Unauthorized Access");
         }
-        order.get().setStatus(OrderStatus.CANCELLED);
+        return mapToOrderResponse(order.get());
+    }
+
+    public OrderResponse cancelOrder(String orderNumber, String userEmail) {
+        Order order = orderRepository.findByOrderNumber(orderNumber).orElse(null);
+        if(order == null){
+            throw new RestException(HttpStatus.NOT_FOUND, "Order not found");
+        }
+        if(!order.getUserEmail().equals(userEmail)){
+            throw new RestException(HttpStatus.UNAUTHORIZED, "Unauthorized Access");
+        }
+        if(order.getStatus() != OrderStatus.PLACED){
+            throw new RestException(HttpStatus.FORBIDDEN, "Order is not cancellable");
+        }
+        order.setStatus(OrderStatus.CANCELLED);
+
         //send details to inventory management to add back the quantities
         String inventoryConfirmation = webClientBuilder.build()
                 .put()
-                .uri("http://inventorymanagement/api/inventory/CancelOrder")
-                .bodyValue(order.get().getOrderItems().stream().map(orderItem -> InventoryConfirmDTO.builder()
-                        .pid(orderItem.getProductId())
-                        .qty(orderItem.getQuantity())
+                .uri("http://inventorymanagement/api/inventory/system/cancel-order")
+                .bodyValue(order.getOrderItems().stream().map(orderItem -> InventoryConfirmDTO.builder()
+                        .productId(orderItem.getProductId())
+                        .quantity(orderItem.getQuantity())
                         .build()).toList())
                 .retrieve()
                 .bodyToMono(String.class)
                 .onErrorResume(e -> {
-                    System.out.println(e.getMessage());
                     throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
                 })
                 .block();
-        if(inventoryConfirmation == null){
-            throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
+        if(!Objects.equals(inventoryConfirmation, "Success")){
+            throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Something went wrong cancelling order");
         }
-        orderRepository.save(order.get());
+        orderRepository.save(order);
+        return mapToOrderResponse(order);
     }
-    public void updateStatus(String orderNumber, String status) {
-        Optional<Order> order = orderRepository.findByOrderNumber(orderNumber);
-        if(order.isEmpty()){
+    public OrderResponse updateStatusAdmin(String orderNumber) {
+        Order order = orderRepository.findByOrderNumber(orderNumber).orElse(null);
+        if(order == null){
             throw new RestException(HttpStatus.NOT_FOUND, "Order not found");
         }
-        if(order.get().getStatus() == OrderStatus.CANCELLED){
+        if(order.getStatus() == OrderStatus.CANCELLED){
             throw new RestException(HttpStatus.FORBIDDEN, "Order already cancelled");
         }
-        //can be expanded to accommodate more statuses
-        switch (status){
-            case "completed":
-                order.get().setStatus(OrderStatus.COMPLETED);
-                break;
-            default:
-                throw new RestException(HttpStatus.BAD_REQUEST, "Invalid Status");
+        if(order.getStatus() != OrderStatus.PLACED){
+            throw new RestException(HttpStatus.FORBIDDEN, "Order is already processed");
         }
-        orderRepository.save(order.get());
+        order.setStatus(OrderStatus.PROCESSED);
+        orderRepository.save(order);
+        return mapToOrderResponse(order);
+    }
+
+    public OrderResponse updateStatusDeliverer(String orderNumber, String status) {
+        Order order = orderRepository.findByOrderNumber(orderNumber).orElse(null);
+        if(order == null){
+            throw new RestException(HttpStatus.NOT_FOUND, "Order not found");
+        }
+        if(order.getStatus() == OrderStatus.CANCELLED){
+            throw new RestException(HttpStatus.FORBIDDEN, "Order already cancelled");
+        }
+        if(order.getStatus() == OrderStatus.PLACED) {
+            throw new RestException(HttpStatus.FORBIDDEN, "Order is still processing");
+        }
+        OrderStatus newOrderStatus;
+        if(order.getStatus() == OrderStatus.PROCESSED){
+            if(status.equals("dispatched")){
+                newOrderStatus = OrderStatus.DISPATCHED;
+            }
+            else{
+                throw new RestException(HttpStatus.FORBIDDEN, "Attempt to deliver before dispatching");
+            }
+        }
+        else if(order.getStatus() == OrderStatus.DISPATCHED){
+            if(status.equals("delivered")){
+                newOrderStatus = OrderStatus.DELIVERED;
+            }
+            else{
+                throw new RestException(HttpStatus.FORBIDDEN, "Invalid status");
+            }
+        }
+        else{
+            throw new RestException(HttpStatus.FORBIDDEN, "Invalid Status");
+        }
+        order.setStatus(newOrderStatus);
+        orderRepository.save(order);
+        return mapToOrderResponse(order);
     }
     private OrderResponse mapToOrderResponse(Order order){
         return OrderResponse.builder()
@@ -183,10 +243,9 @@ public class OrderService {
     private OrderItemResponseDTO mapToOrderItemsDTO(OrderItem orderItem){
         return OrderItemResponseDTO.builder()
                 .pid(orderItem.getProductId())
-                .itemId(orderItem.getItemId())
                 .qty(orderItem.getQuantity())
                 .unitPrice(orderItem.getPrice())
-                .totalPrice(orderItem.getPrice().multiply(new BigDecimal(orderItem.getQuantity())))
+                .totalPrice(orderItem.getPrice().multiply(BigDecimal.valueOf(orderItem.getQuantity())))
                 .build();
     }
     private OrderItem mapToEntity(OrderItemDTO orderItemDTO){
@@ -201,5 +260,10 @@ public class OrderService {
     }
 
 
+    public OrdersResponse getAllByUserEmail(String email) {
+        OrdersResponse ordersResponse = new OrdersResponse();
+        ordersResponse.setOrders(orderRepository.findAllByUserEmail(email).stream().map(this::mapToOrderResponse).toList());
+        return ordersResponse;
+    }
 }
 

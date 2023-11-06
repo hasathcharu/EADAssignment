@@ -5,24 +5,23 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-@Entity
-@Table(name="orderItems")
+@Document
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderItem {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long itemId;
-
-    private Long productId;
+    private ObjectId id;
+    private String productId;
     private BigDecimal price;
-    private Integer quantity;
+    private Double quantity;
 
 }
 

@@ -82,24 +82,25 @@ public class UserService {
 
         String res = webClientBuilder.build()
                 .delete()
-                .uri("http://identitymanagement/api/auth/delete/"+email)
+                .uri("http://identitymanagement/api/auth/system/"+email)
                 .retrieve()
                 .bodyToMono(String.class)
                 .onErrorResume(e -> {
                     System.out.println(e.getMessage());
-                    throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
+                    throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to identity management");
                 })
                 .block();
         if(Objects.equals(res, "Success")){
             userRepository.deleteUserByEmail(email);
+            return;
         }
         throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Something went wrong");
 
     }
 
 
-    public void updateUser(UpdateUserDTO updateUserDTO) {
-        User user = userRepository.findByEmail(updateUserDTO.getEmail()).orElse(null);
+    public UserDetailsDTO updateUser(UpdateUserBasicDTO updateUserDTO, String email) {
+        User user = userRepository.findByEmail(email).orElse(null);
         if(user==null){
             throw new RestException(HttpStatus.NOT_FOUND, "User not found");
         }
@@ -109,5 +110,6 @@ public class UserService {
         user.setTelephone(updateUserDTO.getTelephone() !=null ? updateUserDTO.getTelephone():user.getTelephone());
         user.setGender(updateUserDTO.getGender() !=null ? updateUserDTO.getGender():user.getGender());
         userRepository.save(user);
+        return mapToUserDetailsDTO(user);
     }
 }
