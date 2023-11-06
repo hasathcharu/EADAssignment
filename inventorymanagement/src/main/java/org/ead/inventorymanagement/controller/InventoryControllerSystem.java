@@ -21,12 +21,7 @@ public class InventoryControllerSystem {
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<OrderResponseDTO> placeOrder(@RequestBody List<OrderDTO> products){
         OrderResponseDTO response = inventoryService.placeOrder(products);
-
-        if (response.isSuccess()) {
-            return ResponseEntity.ok(response);
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
-        }
+        return ResponseEntity.ok(response);
     }
     @PutMapping("/cancel-order")
     public ResponseEntity<String> cancelOrder(@RequestBody List<OrderDTO> products) {

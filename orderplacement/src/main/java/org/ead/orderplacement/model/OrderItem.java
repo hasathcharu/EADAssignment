@@ -19,9 +19,9 @@ import java.util.List;
 public class OrderItem {
     @Id
     private ObjectId id;
-    private Long productId;
+    private String productId;
     private BigDecimal price;
-    private Integer quantity;
+    private Double quantity;
 
 }
 

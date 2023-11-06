@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class OrderItemDTO {
-    private Long pid;
-    private Integer qty;
+    private String pid;
+    private Double qty;
 }

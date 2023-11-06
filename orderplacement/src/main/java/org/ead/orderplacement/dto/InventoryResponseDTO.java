@@ -1,4 +1,4 @@
-package org.ead.inventorymanagement.dto;
+package org.ead.orderplacement.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,8 +11,8 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @NoArgsConstructor
-public class OrderResponseDTO {
+public class InventoryResponseDTO {
     private boolean success;
-    private List<OrderConfirmedDTO> products;
+    private List<InventoryConfirmDTO> products;
     private List<String> failedProducts;
 }

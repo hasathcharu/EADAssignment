@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.math.BigDecimal;
+
 @Data
 @AllArgsConstructor
 @SuperBuilder
@@ -13,5 +15,5 @@ import lombok.experimental.SuperBuilder;
 public class OrderConfirmedDTO extends OrderDTO {
     private String productId;
     private Double quantity;
-    private Double price;
+    private BigDecimal price;
 }

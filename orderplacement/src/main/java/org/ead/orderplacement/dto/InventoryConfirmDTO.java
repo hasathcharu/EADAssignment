@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class InventoryConfirmDTO {
-    private long pid;
-    private int qty;
+    private String productId;
+    private Double quantity;
     private BigDecimal price;
 }

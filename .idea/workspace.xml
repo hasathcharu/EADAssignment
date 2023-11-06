@@ -5,19 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/controller/InventoryControllerPublic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/controller/InventoryControllerSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/OrderConfirmedDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/dto/InventoryResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/controller/InventoryControllerAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/controller/InventoryControllerSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/controller/InventoryControllerSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/NewProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/NewProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/OrderConfirmedDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/OrderConfirmedDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/OrderResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/OrderResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/ProductDetailsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/ProductsResponsePublic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/ProductsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/ProductsResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/ProductsResponsePublic.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/ProductsResponsePublic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/UpdateProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/dto/UpdateProductDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/model/Inventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/java/org/ead/inventorymanagement/service/InventoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/controller/OrderControllerBasic.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/controller/OrderControllerBasic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/dto/InventoryConfirmDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/dto/InventoryConfirmDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/dto/OrderItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/dto/OrderItemDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/dto/OrderItemResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/dto/OrderItemResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/dto/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/dto/OrderRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/model/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/service/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +119,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.InventoryManagementApplication">
+  <component name="RunManager" selected="Spring Boot.OrderPlacementApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />

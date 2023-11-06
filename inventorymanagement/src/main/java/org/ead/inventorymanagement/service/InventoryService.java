@@ -107,7 +107,7 @@ public class InventoryService {
     public OrderResponseDTO placeOrder(List<OrderDTO> products) {
 
         OrderResponseDTO response = new OrderResponseDTO();
-        List<OrderDTO> productsWithInsufficientStock = new ArrayList<>();
+        List<String> productsWithInsufficientStock = new ArrayList<String>();
         List<OrderConfirmedDTO> productsWithSufficientStock = new ArrayList<>();
         List<Inventory> inventoryToUpdate = new ArrayList<>();
 
@@ -127,7 +127,7 @@ public class InventoryService {
                 inventoryToUpdate.add(productItem);
                 productsWithSufficientStock.add(mapToOrderConfirmedDTO(productItem, product.getQuantity()));
             } else {
-                productsWithInsufficientStock.add(product);
+                productsWithInsufficientStock.add(product.getProductId());
             }
         }
 
@@ -135,7 +135,6 @@ public class InventoryService {
             response.setSuccess(false);
             response.setFailedProducts(productsWithInsufficientStock);
         } else {
-
             inventoryRepository.saveAll(inventoryToUpdate);
             response.setSuccess(true);
             response.setProducts(productsWithSufficientStock);

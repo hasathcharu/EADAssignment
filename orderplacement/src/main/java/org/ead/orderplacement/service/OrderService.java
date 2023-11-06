@@ -24,14 +24,14 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
     private final WebClient.Builder webClientBuilder;
-    public OrderResponse placeOrder(OrderRequest orderRequest)  {
+    public OrderResponse placeOrder(OrderRequest orderRequest, String userEmail)  {
 
         Order order = new Order();
 
         //get from user management
         UserDetailsDTO userDetails = webClientBuilder.build()
                 .get()
-                .uri("http://usermanagement/api/user/system/"+orderRequest.getUserEmail())
+                .uri("http://usermanagement/api/user/system/"+userEmail)
                 .retrieve()
                 .bodyToMono(UserDetailsDTO.class)
                 .onErrorResume(e -> {
@@ -59,31 +59,36 @@ public class OrderService {
                 .toList();
 
         order.setOrderItems(orderItems);
-//        List<InventoryConfirmDTO> inventoryConfirmDTOList = webClientBuilder.build()
-//                .put()
-//                .uri("http://inventorymanagement/api/inventory/PlaceOrder")
-//                .bodyValue(orderItems.stream().map(orderItem -> InventoryConfirmDTO.builder()
-//                        .pid(orderItem.getProductId())
-//                        .qty(orderItem.getQuantity())
-//                        .build()).toList())
-//                .retrieve()
-//                .bodyToFlux(InventoryConfirmDTO.class)
-//                .onErrorResume(e -> {
-//                    System.out.println(e.getMessage());
-//                    if(e.getMessage().contains("404")){
-//                        throw new RestException(HttpStatus.NOT_FOUND, "Product(s) out of stock");
-//                    }
-//                    else{
-//                        throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
-//                    }
-//                })
-//                .collectList().block();
-//        if(inventoryConfirmDTOList == null){
-//            throw new RestException(HttpStatus.NOT_FOUND, "Product(s) out of stock");
-//        }
-//        //set prices
+        InventoryResponseDTO inventoryResponseDTO = webClientBuilder.build()
+                .put()
+                .uri("http://inventorymanagement/api/inventory/system/place-order")
+                .bodyValue(orderItems.stream().map(orderItem -> InventoryConfirmDTO.builder()
+                        .productId(orderItem.getProductId())
+                        .quantity(orderItem.getQuantity())
+                        .build()).toList())
+                .retrieve()
+                .bodyToMono(InventoryResponseDTO.class)
+                .onErrorResume(e -> {
+                    if(e.getMessage().contains("404")){
+                        throw new RestException(HttpStatus.NOT_FOUND, "Product(s) not available");
+                    }
+                    throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
+                })
+                .block();
+        if(inventoryResponseDTO == null){
+            throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
+        }
+        if(!inventoryResponseDTO.isSuccess()){
+            String outOfStock = inventoryResponseDTO.getFailedProducts().toString();
+            throw new RestException(HttpStatus.NOT_FOUND, "Product(s) out of stock: "+outOfStock);
+        }
         for(OrderItem orderItem: orderItems){
-            orderItem.setPrice(BigDecimal.valueOf(0));
+            for(InventoryConfirmDTO inventoryConfirmDTO: inventoryResponseDTO.getProducts()){
+                if(orderItem.getProductId().equals(inventoryConfirmDTO.getProductId())){
+                    orderItem.setPrice(inventoryConfirmDTO.getPrice());
+                    break;
+                }
+            }
         }
         order.setDate(new Date());
         order.setStatus(OrderStatus.PLACED);
@@ -97,6 +102,7 @@ public class OrderService {
             }
         }
         order.setOrderNumber(orderNumber);
+        order.setOrderItems(orderItems);
         this.orderRepository.save(order);
         return mapToOrderResponse(order);
     }
@@ -205,7 +211,7 @@ public class OrderService {
                 .pid(orderItem.getProductId())
                 .qty(orderItem.getQuantity())
                 .unitPrice(orderItem.getPrice())
-                .totalPrice(orderItem.getPrice().multiply(new BigDecimal(orderItem.getQuantity())))
+                .totalPrice(orderItem.getPrice().multiply(BigDecimal.valueOf(orderItem.getQuantity())))
                 .build();
     }
     private OrderItem mapToEntity(OrderItemDTO orderItemDTO){

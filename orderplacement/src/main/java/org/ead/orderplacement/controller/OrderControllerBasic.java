@@ -17,8 +17,8 @@ public class OrderControllerBasic {
     private final OrderService orderService;
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public OrderResponse placeOrder(@RequestBody OrderRequest orderRequest){
-        return orderService.placeOrder(orderRequest);
+    public OrderResponse placeOrder(@RequestBody OrderRequest orderRequest, @RequestHeader("X-User-Email") String userEmail){
+        return orderService.placeOrder(orderRequest, userEmail);
     }
     @GetMapping
     @ResponseStatus(HttpStatus.OK)

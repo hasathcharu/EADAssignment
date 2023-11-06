@@ -8,6 +8,8 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
 
+import java.math.BigDecimal;
+
 @Document(value = "inventory")
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +20,7 @@ public class Inventory {
     private ObjectId id;
     private String product_name;
     private String product_brand;
-    private Double price;
+    private BigDecimal price;
     private Double available_quantity;
 
 }
