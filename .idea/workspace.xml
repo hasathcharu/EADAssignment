@@ -5,28 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/SecurityUtil/CheckRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/config/InterceptorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/config/RequestInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/filter/RouteValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/models/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/org/ead/apigateway/util/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/models/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/controller/OrderControllerAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/controller/OrderControllerAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/controller/OrderControllerBasic.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/controller/OrderControllerBasic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/java/org/ead/orderplacement/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/controller/UserControllerBasic.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/controller/UserControllerBasic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/java/org/ead/usermanagement/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -187,9 +173,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.APIGatewayApplication" />
-        <item itemvalue="Spring Boot.EurekaServer" />
         <item itemvalue="Spring Boot.UserManagementApplication" />
+        <item itemvalue="Spring Boot.EurekaServer" />
+        <item itemvalue="Spring Boot.APIGatewayApplication" />
       </list>
     </recent_temporary>
   </component>
