@@ -27,9 +27,9 @@ public class OrderControllerAdmin {
     }
 
 
-    @PutMapping("/status/{orderNumber}")
+    @PutMapping("/process/{orderNumber}")
     @ResponseStatus(HttpStatus.OK)
     public OrderResponse updateStatus(@PathVariable String orderNumber){
-        return orderService.updateStatus(orderNumber);
+        return orderService.updateStatusAdmin(orderNumber);
     }
 }

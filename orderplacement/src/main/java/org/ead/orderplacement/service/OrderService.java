@@ -169,23 +169,56 @@ public class OrderService {
         orderRepository.save(order);
         return mapToOrderResponse(order);
     }
-    public OrderResponse updateStatus(String orderNumber) {
-        Optional<Order> order = orderRepository.findByOrderNumber(orderNumber);
-        if(order.isEmpty()){
+    public OrderResponse updateStatusAdmin(String orderNumber) {
+        Order order = orderRepository.findByOrderNumber(orderNumber).orElse(null);
+        if(order == null){
             throw new RestException(HttpStatus.NOT_FOUND, "Order not found");
         }
-        if(order.get().getStatus() == OrderStatus.CANCELLED){
+        if(order.getStatus() == OrderStatus.CANCELLED){
             throw new RestException(HttpStatus.FORBIDDEN, "Order already cancelled");
         }
-        //can be expanded to accommodate more statuses
-        switch(order.get().getStatus()){
-            case PLACED -> order.get().setStatus(OrderStatus.PROCESSED);
-            case PROCESSED -> order.get().setStatus(OrderStatus.DISPATCHED);
-            case DISPATCHED -> order.get().setStatus(OrderStatus.DELIVERED);
-            default -> throw new RestException(HttpStatus.FORBIDDEN, "Order already delivered");
+        if(order.getStatus() != OrderStatus.PLACED){
+            throw new RestException(HttpStatus.FORBIDDEN, "Order is already processed");
         }
-        orderRepository.save(order.get());
-        return mapToOrderResponse(order.get());
+        order.setStatus(OrderStatus.PROCESSED);
+        orderRepository.save(order);
+        return mapToOrderResponse(order);
+    }
+
+    public OrderResponse updateStatusDeliverer(String orderNumber, String status) {
+        Order order = orderRepository.findByOrderNumber(orderNumber).orElse(null);
+        if(order == null){
+            throw new RestException(HttpStatus.NOT_FOUND, "Order not found");
+        }
+        if(order.getStatus() == OrderStatus.CANCELLED){
+            throw new RestException(HttpStatus.FORBIDDEN, "Order already cancelled");
+        }
+        if(order.getStatus() == OrderStatus.PLACED) {
+            throw new RestException(HttpStatus.FORBIDDEN, "Order is still processing");
+        }
+        OrderStatus newOrderStatus;
+        if(order.getStatus() == OrderStatus.PROCESSED){
+            if(status.equals("dispatched")){
+                newOrderStatus = OrderStatus.DISPATCHED;
+            }
+            else{
+                throw new RestException(HttpStatus.FORBIDDEN, "Attempt to deliver before dispatching");
+            }
+        }
+        else if(order.getStatus() == OrderStatus.DISPATCHED){
+            if(status.equals("delivered")){
+                newOrderStatus = OrderStatus.DELIVERED;
+            }
+            else{
+                throw new RestException(HttpStatus.FORBIDDEN, "Invalid status");
+            }
+        }
+        else{
+            throw new RestException(HttpStatus.FORBIDDEN, "Invalid Status");
+        }
+        order.setStatus(newOrderStatus);
+        orderRepository.save(order);
+        return mapToOrderResponse(order);
     }
     private OrderResponse mapToOrderResponse(Order order){
         return OrderResponse.builder()

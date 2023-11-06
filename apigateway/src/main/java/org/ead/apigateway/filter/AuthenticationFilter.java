@@ -50,6 +50,10 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
                     System.out.println("Not a user");
                     throw new RestException(HttpStatus.UNAUTHORIZED,"Insufficient Privileges. You need to be a user.");
                 }
+                if(validator.isDelivererOnly.test(exchange.getRequest()) && !roles.contains("DELIVERER")){
+                    System.out.println("Not a Deliverer");
+                    throw new RestException(HttpStatus.UNAUTHORIZED,"Insufficient Privileges. You need to be a Deliverer.");
+                }
                 if(validator.isAdminOnly.test(exchange.getRequest()) && !roles.contains("ADMIN")){
                     System.out.println("Not an admin");
                     throw new RestException(HttpStatus.UNAUTHORIZED,"Insufficient Privileges. You need to be an admin.");

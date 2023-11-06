@@ -24,6 +24,10 @@ public class RouteValidator {
         userRoutes.put("/api/order/basic", Arrays.asList(HttpMethod.GET, HttpMethod.POST, HttpMethod.DELETE));
     }
 
+    public static final Map<String, List<HttpMethod>> delivererRoutes = new HashMap<>();
+    static {
+        delivererRoutes.put("/api/order/deliverer", Arrays.asList(HttpMethod.PUT));
+    }
     public static final Map<String, List<HttpMethod>> adminRoutes = new HashMap<>();
     static {
         adminRoutes.put("/api/user/admin", Arrays.asList(HttpMethod.GET, HttpMethod.DELETE));
@@ -41,6 +45,8 @@ public class RouteValidator {
         return false;
     };
 
+
+
     private String getMatch(String path, Map<String, List<HttpMethod>> routes) {
         return routes.keySet()
                 .stream()
@@ -54,6 +60,16 @@ public class RouteValidator {
         String key = getMatch(path, userRoutes);
         if (key!=null) {
             return userRoutes.get(key).contains(requestMethod);
+        }
+        return false;
+    };
+
+    public Predicate<ServerHttpRequest> isDelivererOnly = request -> {
+        String path = request.getURI().getPath();
+        HttpMethod requestMethod = request.getMethod();
+        String key = getMatch(path, delivererRoutes);
+        if (key!=null) {
+            return delivererRoutes.get(key).contains(requestMethod);
         }
         return false;
     };
