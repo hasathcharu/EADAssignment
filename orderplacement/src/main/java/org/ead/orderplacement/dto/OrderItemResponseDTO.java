@@ -12,7 +12,6 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Builder
 public class OrderItemResponseDTO {
-    private Long itemId;
     private Long pid;
     private Integer qty;
     private BigDecimal unitPrice;

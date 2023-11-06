@@ -9,16 +9,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/order")
+@RequestMapping("/api/order/admin")
 @RequiredArgsConstructor
-public class OrderController {
+public class OrderControllerAdmin {
 
     private final OrderService orderService;
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public OrderResponse placeOrder(@RequestBody OrderRequest orderRequest){
-        return orderService.placeOrder(orderRequest);
-    }
 
     @GetMapping("/{orderNumber}")
     @ResponseStatus(HttpStatus.OK)
@@ -31,17 +26,10 @@ public class OrderController {
         return orderService.getAllOrders();
     }
 
-    @DeleteMapping("/{orderNumber}")
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    public String cancelOrder(@PathVariable String orderNumber){
-        orderService.cancelOrder(orderNumber);
-        return "Success";
-    }
 
-    @PutMapping("/{orderNumber}/{status}")
+    @PutMapping("/status/{orderNumber}")
     @ResponseStatus(HttpStatus.OK)
-    public String updateStatus(@PathVariable String orderNumber, @PathVariable String status){
-        orderService.updateStatus(orderNumber, status);
-        return "Success";
+    public OrderResponse updateStatus(@PathVariable String orderNumber){
+        return orderService.updateStatus(orderNumber);
     }
 }
