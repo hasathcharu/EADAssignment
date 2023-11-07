@@ -40,5 +40,5 @@ build/
 .env
 
 
-./secrets.txt
-./jwtsecret.txt
+secrets.txt
+jwtsecret.txt
