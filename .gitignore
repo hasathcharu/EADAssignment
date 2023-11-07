@@ -39,5 +39,5 @@ build/
 
 .env
 
-mysql-data/
-mssql-data/
+
+secrets/

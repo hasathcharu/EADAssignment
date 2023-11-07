@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/controller/AuthenticationControllerPublic.java" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/java/org/ead/identitymanagement/controller/AuthenticationControllerPublic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identitymanagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/identitymanagement/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventorymanagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/inventorymanagement/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderplacement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/orderplacement/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usermanagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usermanagement/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -255,7 +243,7 @@
       <workItem from="1699265665604" duration="499000" />
       <workItem from="1699266216725" duration="2751000" />
       <workItem from="1699269262475" duration="566000" />
-      <workItem from="1699290077375" duration="8651000" />
+      <workItem from="1699290077375" duration="8856000" />
     </task>
     <servers />
   </component>
