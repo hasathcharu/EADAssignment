@@ -14,6 +14,8 @@ services:
 #    restart: always
     environment:
       - DISCOVERY=http://discoveryserver:8761/eureka
+    env_file:
+      - ./jwtsecret.txt
     depends_on:
       - discoveryserver
     ports:
@@ -61,6 +63,7 @@ services:
       - DISCOVERY=http://discoveryserver:8761/eureka
     env_file:
       - ./secrets.txt
+      - ./jwtsecret.txt
     depends_on:
       - apigateway
       - discoveryserver
