@@ -12,6 +12,8 @@ services:
     container_name: api_gateway
     image: apigateway:2.0
 #    restart: always
+    environment:
+      - DISCOVERY=http://discoveryserver:8761/eureka
     depends_on:
       - discoveryserver
     ports:
@@ -22,6 +24,10 @@ services:
     container_name: inventory_management
     image: inventorymanagement:2.0
 #    restart: always
+    environment:
+      - DISCOVERY=http://discoveryserver:8761/eureka
+    env_file:
+      - ./secrets.txt
     depends_on:
       - apigateway
       - discoveryserver
@@ -29,6 +35,10 @@ services:
     container_name: user_management
     image: usermanagement:2.0
 #    restart: always
+    environment:
+      - DISCOVERY=http://discoveryserver:8761/eureka
+    env_file:
+      - ./secrets.txt
     depends_on:
       - apigateway
       - discoveryserver
@@ -36,6 +46,10 @@ services:
     container_name: order_placement
     image: orderplacement:2.0
 #    restart: always
+    environment:
+      - DISCOVERY=http://discoveryserver:8761/eureka
+    env_file:
+      - ./secrets.txt
     depends_on:
       - apigateway
       - discoveryserver
@@ -43,6 +57,10 @@ services:
     container_name: identity_management
     image: identitymanagement:2.0
 #    restart: always
+    environment:
+      - DISCOVERY=http://discoveryserver:8761/eureka
+    env_file:
+      - ./secrets.txt
     depends_on:
       - apigateway
       - discoveryserver

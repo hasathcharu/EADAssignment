@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="" />
+    <list default="true" id="809f02a9-435f-4fd3-bbf9-573e688c5058" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/secrets.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +36,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -102,7 +111,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.APIGatewayApplication">
+  <component name="RunManager" selected="Spring Boot.IdentityManagementApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,7 +158,7 @@
     <configuration name="IdentityManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
         <env name="DISCOVERY" value="http://localhost:8761/eureka" />
-        <env name="IDENTITY_DB" value="mongodb+srv://haritha:ioiLjtRw19cPJDOF@cluster0.sfcrodt.mongodb.net/authService?retryWrites=true&amp;w=majority" />
+        <env name="IDENTITY_DB" value="mongodb+srv://eadassignment:DsQpGrdDVssExEAh@cluster0.sfcrodt.mongodb.net/authService?retryWrites=true&amp;w=majority" />
       </envs>
       <module name="identitymanagement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.identitymanagement.IdentityManagementApplication" />
@@ -160,7 +169,7 @@
     <configuration name="InventoryManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="DISCOVERY" value="http://localhost:8761/eureka" />
-        <env name="INVENTORY_DB" value="mongodb+srv://haritha:ioiLjtRw19cPJDOF@cluster0.sfcrodt.mongodb.net/inventoryService?retryWrites=true&amp;w=majority" />
+        <env name="INVENTORY_DB" value="mongodb+srv://eadassignment:DsQpGrdDVssExEAh@cluster0.sfcrodt.mongodb.net/inventoryService?retryWrites=true&amp;w=majority" />
       </envs>
       <module name="inventorymanagement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.inventorymanagement.InventoryManagementApplication" />
@@ -177,7 +186,7 @@
     <configuration name="OrderPlacementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
         <env name="DISCOVERY" value="http://localhost:8761/eureka" />
-        <env name="ORDER_DB" value="mongodb+srv://haritha:ioiLjtRw19cPJDOF@cluster0.sfcrodt.mongodb.net/orderService?retryWrites=true&amp;w=majority" />
+        <env name="ORDER_DB" value="mongodb+srv://eadassignment:DsQpGrdDVssExEAh@cluster0.sfcrodt.mongodb.net/orderService?retryWrites=true&amp;w=majority" />
       </envs>
       <module name="orderplacement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.orderplacement.OrderPlacementApplication" />
@@ -188,7 +197,7 @@
     <configuration name="UserManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="DISCOVERY" value="http://localhost:8761/eureka" />
-        <env name="USER_DB" value="mongodb+srv://haritha:ioiLjtRw19cPJDOF@cluster0.sfcrodt.mongodb.net/userService?retryWrites=true&amp;w=majority" />
+        <env name="USER_DB" value="mongodb+srv://eadassignment:DsQpGrdDVssExEAh@cluster0.sfcrodt.mongodb.net/userService?retryWrites=true&amp;w=majority" />
       </envs>
       <module name="usermanagement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.ead.usermanagement.UserManagementApplication" />
@@ -243,7 +252,7 @@
       <workItem from="1699265665604" duration="499000" />
       <workItem from="1699266216725" duration="2751000" />
       <workItem from="1699269262475" duration="566000" />
-      <workItem from="1699290077375" duration="8856000" />
+      <workItem from="1699290077375" duration="11205000" />
     </task>
     <servers />
   </component>
