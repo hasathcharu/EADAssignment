@@ -3,7 +3,7 @@ services:
   discoveryserver:
     container_name: discovery_server
     image: discoveryserver:2.0
-    restart: always
+#    restart: always
     ports:
       - "8761:8761"
     expose:
@@ -11,7 +11,7 @@ services:
   apigateway:
     container_name: api_gateway
     image: apigateway:2.0
-    restart: always
+#    restart: always
     depends_on:
       - discoveryserver
     ports:
@@ -21,28 +21,28 @@ services:
   inventorymanagement:
     container_name: inventory_management
     image: inventorymanagement:2.0
-    restart: always
+#    restart: always
     depends_on:
       - apigateway
       - discoveryserver
   usermanagement:
     container_name: user_management
     image: usermanagement:2.0
-    restart: always
+#    restart: always
     depends_on:
       - apigateway
       - discoveryserver
   orderplacement:
     container_name: order_placement
     image: orderplacement:2.0
-    restart: always
+#    restart: always
     depends_on:
       - apigateway
       - discoveryserver
   identitymanagement:
     container_name: identity_management
     image: identitymanagement:2.0
-    restart: always
+#    restart: always
     depends_on:
       - apigateway
       - discoveryserver
