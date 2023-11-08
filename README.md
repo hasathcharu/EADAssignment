@@ -34,4 +34,14 @@ ORDER_DB=
 USER_DB=
 ```
 
+### Create the secrets file `jwtsecret.txt` and define the following Environment Variables
+
+```
+JWT_SECRET=
+```
+
 ### Run Docker-Compose
+
+```
+docker-compose up
+```
