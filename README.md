@@ -11,8 +11,8 @@ Choose the platform in pom.xml by uncommenting the relevant lines.
 		<!--<os>linux</os>-->
 	<!--</platform>-->
 	<platform>
-    <architecture>arm64</architecture>
-	  <os>linux</os>
+		<architecture>arm64</architecture>
+	  	<os>linux</os>
 	</platform>
 </platforms>
 ```
