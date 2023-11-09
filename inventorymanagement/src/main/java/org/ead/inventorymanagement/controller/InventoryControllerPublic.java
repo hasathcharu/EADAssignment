@@ -24,7 +24,7 @@ public class InventoryControllerPublic {
 
     @GetMapping("/{pId}")
     @ResponseStatus(HttpStatus.OK)
-    public ProductsResponsePublic getProductDetails(@PathVariable ObjectId pId){
+    public ProductsResponsePublic getProductDetails(@PathVariable String pId){
         return inventoryService.getProductDetailsPublic(pId);
     }
 

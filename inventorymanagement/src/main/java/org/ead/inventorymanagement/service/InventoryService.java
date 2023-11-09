@@ -62,17 +62,24 @@ public class InventoryService {
                 .build();
     }
 
-    public ProductsResponse getProductDetails(ObjectId id) {
-        Inventory inventory = inventoryRepository.findById(id).orElse(null);
-        if (inventory == null) {
+    public ProductsResponse getProductDetails(String id) {
+        Inventory inventory;
+        System.out.println("Hello");
+        try {
+            inventory = inventoryRepository.findById(new ObjectId(id)).orElseThrow();
+            System.out.println("Hello Inventory");
+        }catch(Exception e){
+            System.out.println("Hello Exception");
             throw new RestException(HttpStatus.NOT_FOUND, "Product not found");
         }
         return mapToProductsResponse(inventory);
     }
 
-    public ProductsResponsePublic getProductDetailsPublic(ObjectId id) {
-        Inventory inventory = inventoryRepository.findById(id).orElse(null);
-        if (inventory == null) {
+    public ProductsResponsePublic getProductDetailsPublic(String id) {
+        Inventory inventory;
+        try {
+            inventory = inventoryRepository.findById(new ObjectId(id)).orElseThrow();
+        }catch(Exception e){
             throw new RestException(HttpStatus.NOT_FOUND, "Product not found");
         }
         return mapToProductsResponsePublic(inventory);
@@ -81,9 +88,10 @@ public class InventoryService {
 
     public ProductsResponse updateProduct(UpdateProductDTO updateProductDTO) {
 
-        Inventory inventory = inventoryRepository.findById(new ObjectId(updateProductDTO.getProductId())).orElse(null);
-
-        if (inventory == null) {
+        Inventory inventory;
+        try {
+            inventory = inventoryRepository.findById(new ObjectId(updateProductDTO.getProductId())).orElseThrow();
+        }catch(Exception e){
             throw new RestException(HttpStatus.NOT_FOUND, "Product not found");
         }
         inventory.setProduct_name(updateProductDTO.getProduct_name() != null ? updateProductDTO.getProduct_name() : inventory.getProduct_name());
@@ -95,19 +103,19 @@ public class InventoryService {
         return mapToProductsResponse(inventory);
     }
 
-    public void deleteProduct(ObjectId id) {
-        Inventory inventory = inventoryRepository.findById(id).orElse(null);
-
-        if (inventory == null) {
+    public void deleteProduct(String id) {
+        try {
+            inventoryRepository.findById(new ObjectId(id)).orElseThrow();
+        }catch(Exception e){
             throw new RestException(HttpStatus.NOT_FOUND, "Product not found");
         }
-        inventoryRepository.deleteById(id);
+        inventoryRepository.deleteById(new ObjectId(id));
     }
 
     public OrderResponseDTO placeOrder(List<OrderDTO> products) {
 
         OrderResponseDTO response = new OrderResponseDTO();
-        List<String> productsWithInsufficientStock = new ArrayList<String>();
+        List<String> productsWithInsufficientStock = new ArrayList<>();
         List<OrderConfirmedDTO> productsWithSufficientStock = new ArrayList<>();
         List<Inventory> inventoryToUpdate = new ArrayList<>();
 

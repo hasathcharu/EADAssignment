@@ -31,7 +31,7 @@ public class InventoryControllerAdmin {
 
     @GetMapping("/{pId}")
     @ResponseStatus(HttpStatus.OK)
-    public ProductsResponse getProductDetails(@PathVariable ObjectId pId){
+    public ProductsResponse getProductDetails(@PathVariable String pId){
         return inventoryService.getProductDetails(pId);
     }
 
@@ -43,7 +43,7 @@ public class InventoryControllerAdmin {
 
     @DeleteMapping("/{pId}")
     @ResponseStatus(HttpStatus.OK)
-    public String deleteProduct(@PathVariable ObjectId pId){
+    public String deleteProduct(@PathVariable String pId){
         inventoryService.deleteProduct(pId);
         return "Success";
     }
