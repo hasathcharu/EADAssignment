@@ -2,7 +2,7 @@ package org.ead.identitymanagement.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.ead.identitymanagement.dto.ChangePasswordDTO;
-import org.ead.identitymanagement.service.AuthenticationService;
+import org.ead.identitymanagement.service.AuthService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/auth/basic")
 public class AuthenticationControllerBasic {
 
-    private final AuthenticationService service;
+    private final AuthService service;
 
     @PutMapping("/change-password")
     public String changePassword(

@@ -8,6 +8,8 @@ import org.ead.identitymanagement.models.Role;
 import org.ead.identitymanagement.models.User;
 import org.ead.identitymanagement.repository.UserRepository;
 import org.ead.identitymanagement.response.AuthenticationResponse;
+import org.ead.identitymanagement.response.AuthorizationResponse;
+import org.ead.identitymanagement.util.JwtUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,19 +19,20 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
 
 
 @Service
 @RequiredArgsConstructor
 @Transactional
-public class AuthenticationService {
+public class AuthService {
     private final UserRepository repository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
     private final WebClient.Builder webClientBuilder;
+    private final JwtUtil jwtUtil;
+
     public String register(RegisterRequest request) {
         User checkUser = repository.findByEmail(request.getEmail()).orElse(null);
         if(checkUser!=null){
@@ -160,4 +163,35 @@ public class AuthenticationService {
         repository.save(user);
         return "Success";
     }
+
+    public AuthorizationResponse authorization(String header){
+        String authHeader = header;
+        if (authHeader!=null && authHeader.startsWith("Bearer ")){
+            authHeader = authHeader.substring(7);
+            System.out.println(authHeader);
+            try {
+                jwtUtil.validateToken(authHeader);
+            }catch (Exception e){
+                throw new RestException(HttpStatus.UNAUTHORIZED,"Invalid Token");
+            }
+        } else {
+            throw new RestException(HttpStatus.NOT_FOUND,"Header not found");
+        }
+
+        String username = jwtUtil.extractUsername(authHeader);
+        User user;
+        try {
+            user = repository.findByEmail(username).orElseThrow();
+        }catch (Exception e){
+            throw new RestException(HttpStatus.NOT_FOUND,"User not found");
+        }
+
+        AuthorizationResponse authorizationResponse = AuthorizationResponse.builder()
+                .email(user.getEmail())
+                .roles(user.getRoles().toArray(new Role[0]))
+                .build();
+
+        return authorizationResponse;
+    }
+
 }

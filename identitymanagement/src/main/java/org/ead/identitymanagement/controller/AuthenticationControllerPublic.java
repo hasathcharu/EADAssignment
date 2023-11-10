@@ -4,7 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.ead.identitymanagement.dto.AuthenticationRequest;
 import org.ead.identitymanagement.dto.RegisterRequest;
 import org.ead.identitymanagement.response.AuthenticationResponse;
-import org.ead.identitymanagement.service.AuthenticationService;
+import org.ead.identitymanagement.response.AuthorizationResponse;
+import org.ead.identitymanagement.service.AuthService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/auth/public")
 public class AuthenticationControllerPublic {
 
-    private final AuthenticationService service;
+    private final AuthService service;
 
     @PostMapping("/register")
     public String register(
@@ -29,4 +30,11 @@ public class AuthenticationControllerPublic {
         return ResponseEntity.ok(service.authenticate(request));
     }
 
+    @PostMapping("/authorize")
+    public AuthorizationResponse authorize(
+            @RequestHeader ("Authorization") String header
+    ){
+        System.out.println(header);
+        return service.authorization(header);
+    }
 }

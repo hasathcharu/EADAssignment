@@ -2,11 +2,7 @@ package org.ead.identitymanagement.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.ead.identitymanagement.dto.AssignRole;
-import org.ead.identitymanagement.dto.AuthenticationRequest;
-import org.ead.identitymanagement.dto.RegisterRequest;
-import org.ead.identitymanagement.response.AuthenticationResponse;
-import org.ead.identitymanagement.service.AuthenticationService;
-import org.springframework.http.ResponseEntity;
+import org.ead.identitymanagement.service.AuthService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -14,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/auth/admin")
 public class AuthenticationControllerAdmin {
 
-    private final AuthenticationService service;
+    private final AuthService service;
 
     @PutMapping("/assign-role")
     public String assignRole(
