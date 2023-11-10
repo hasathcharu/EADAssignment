@@ -30,7 +30,7 @@ public class AuthenticationControllerPublic {
         return ResponseEntity.ok(service.authenticate(request));
     }
 
-    @PostMapping("/authorize")
+    @GetMapping("/authorize")
     public AuthorizationResponse authorize(
             @RequestHeader ("Authorization") String header
     ){

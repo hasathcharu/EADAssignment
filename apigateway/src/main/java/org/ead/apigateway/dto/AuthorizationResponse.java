@@ -1,13 +1,12 @@
-package org.ead.identitymanagement.response;
+package org.ead.apigateway.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.ead.identitymanagement.models.Role;
+import org.ead.apigateway.models.Role;
 
 import java.util.Collection;
-import java.util.List;
 
 @Data
 @Builder

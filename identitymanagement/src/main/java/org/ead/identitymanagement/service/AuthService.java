@@ -188,7 +188,7 @@ public class AuthService {
 
         AuthorizationResponse authorizationResponse = AuthorizationResponse.builder()
                 .email(user.getEmail())
-                .roles(user.getRoles().toArray(new Role[0]))
+                .roles(user.getRoles())
                 .build();
 
         return authorizationResponse;
