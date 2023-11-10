@@ -17,8 +17,6 @@ services:
     environment:
       - DISCOVERY=http://discoveryserver:8761/eureka
       - DISCOVERY_HOSTNAME=discoveryserver
-    env_file:
-      - ./jwtsecret.txt
     depends_on:
       - discoveryserver
     ports:

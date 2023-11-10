@@ -3,7 +3,6 @@ package org.ead.apigateway.filter;
 import org.ead.apigateway.dto.AuthorizationResponse;
 import org.ead.apigateway.exception.RestException;
 import org.ead.apigateway.models.Role;
-import org.ead.apigateway.util.JwtUtil;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.http.HttpHeaders;
@@ -21,7 +20,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
     private final WebClient.Builder webClientBuilder;
 
 
-    public AuthenticationFilter(RouteValidator validator, JwtUtil jwtUtil, WebClient.Builder webClientBuilder) {
+    public AuthenticationFilter(RouteValidator validator, WebClient.Builder webClientBuilder) {
         super(Config.class);
         this.validator = validator;
         this.webClientBuilder = webClientBuilder;
