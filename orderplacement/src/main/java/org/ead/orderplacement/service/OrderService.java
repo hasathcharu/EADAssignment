@@ -185,7 +185,7 @@ public class OrderService {
         return mapToOrderResponse(order);
     }
 
-    public OrderResponse updateStatusDeliverer(String orderNumber, String status) {
+    public OrderResponse updateStatusDeliverer(String orderNumber, String status, String deliverer) {
         Order order = orderRepository.findByOrderNumber(orderNumber).orElse(null);
         if(order == null){
             throw new RestException(HttpStatus.NOT_FOUND, "Order not found");
@@ -196,13 +196,45 @@ public class OrderService {
         if(order.getStatus() == OrderStatus.PLACED) {
             throw new RestException(HttpStatus.FORBIDDEN, "Order is still processing");
         }
+        if(order.getDeliveryPersonEmail() != null && !order.getDeliveryPersonEmail().equals(deliverer)){
+            throw new RestException(HttpStatus.UNAUTHORIZED, "Some other delivery person has been assigned");
+        }
         OrderStatus newOrderStatus;
         if(order.getStatus() == OrderStatus.PROCESSED){
+            if(status.equals("pickup")){
+                newOrderStatus = OrderStatus.PICKEDUP;
+                order.setDeliveryPersonEmail(deliverer);
+                UserDetailsDTO delivererEntity = webClientBuilder.build()
+                        .get()
+                        .uri("http://usermanagement/api/user/system/"+deliverer)
+                        .retrieve()
+                        .bodyToMono(UserDetailsDTO.class)
+                        .onErrorResume(e -> {
+                            if(e.getMessage().contains("404")){
+                                throw new RestException(HttpStatus.NOT_FOUND, "User not found");
+                            }
+                            else{
+                                throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to user management");
+                            }
+                        })
+                        .block();
+                if(delivererEntity == null){
+                    throw new RestException(HttpStatus.NOT_FOUND, "User not found");
+                }
+                order.setDeliveryPersonEmail(delivererEntity.getEmail());
+                order.setDeliveryPersonTelephone(delivererEntity.getTelephone());
+                order.setDeliveryPersonName(delivererEntity.getName());
+            }
+            else{
+                throw new RestException(HttpStatus.FORBIDDEN, "Order can only be picked up");
+            }
+        }
+        else if(order.getStatus() == OrderStatus.PICKEDUP){
             if(status.equals("dispatched")){
                 newOrderStatus = OrderStatus.DISPATCHED;
             }
             else{
-                throw new RestException(HttpStatus.FORBIDDEN, "Attempt to deliver before dispatching");
+                throw new RestException(HttpStatus.FORBIDDEN, "Order can only be dispatched");
             }
         }
         else if(order.getStatus() == OrderStatus.DISPATCHED){
@@ -210,7 +242,7 @@ public class OrderService {
                 newOrderStatus = OrderStatus.DELIVERED;
             }
             else{
-                throw new RestException(HttpStatus.FORBIDDEN, "Invalid status");
+                throw new RestException(HttpStatus.FORBIDDEN, "Order can only be delivered");
             }
         }
         else{
@@ -231,6 +263,9 @@ public class OrderService {
                 .orderItems(order.getOrderItems().stream().map(this:: mapToOrderItemsDTO).toList())
                 .status(order.getStatus())
                 .total(calculateOrderTotal(order.getOrderItems()))
+                .deliveryPersonEmail(order.getDeliveryPersonEmail())
+                .deliveryPersonName(order.getDeliveryPersonName())
+                .deliveryPersonTelephone(order.getDeliveryPersonTelephone())
                 .build();
     }
     private BigDecimal calculateOrderTotal(List<OrderItem> orderItems){

@@ -175,7 +175,7 @@ public class AuthService {
                 throw new RestException(HttpStatus.UNAUTHORIZED,"Invalid Token");
             }
         } else {
-            throw new RestException(HttpStatus.NOT_FOUND,"Header not found");
+            throw new RestException(HttpStatus.UNAUTHORIZED,"Header not found");
         }
 
         String username = jwtUtil.extractUsername(authHeader);

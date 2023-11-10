@@ -13,7 +13,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 import java.util.Collection;
-import java.util.List;
 
 @Component
 public class AuthenticationFilter extends AbstractGatewayFilterFactory<AuthenticationFilter.Config> {
@@ -53,6 +52,9 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
                             System.out.println(e.getMessage());
                             if(e.getMessage().contains("404 Not Found")){
                                 throw new RestException(HttpStatus.NOT_FOUND, "User not found");
+                            }
+                            if(e.getMessage().contains("401")){
+                                throw new RestException(HttpStatus.UNAUTHORIZED, "Invalid Token");
                             }
                             throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to identity management");
                         })

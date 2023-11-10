@@ -28,4 +28,7 @@ public class Order {
     @Enumerated(value=EnumType.STRING)
     private OrderStatus status;
     private List<OrderItem> orderItems;
+    private String deliveryPersonName;
+    private String deliveryPersonEmail;
+    private String deliveryPersonTelephone;
 }

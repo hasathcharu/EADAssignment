@@ -25,5 +25,8 @@ public class OrderResponse {
     private OrderStatus status;
     private BigDecimal total;
     private List<OrderItemResponseDTO> orderItems;
+    private String deliveryPersonName;
+    private String deliveryPersonEmail;
+    private String deliveryPersonTelephone;
 
 }

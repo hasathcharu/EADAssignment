@@ -22,7 +22,6 @@ public class OrderControllerAdmin {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public OrdersResponse getOrders(){
-        System.out.println("Hello");
         return orderService.getAllOrders();
     }
 
