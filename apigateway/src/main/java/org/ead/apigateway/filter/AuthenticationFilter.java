@@ -51,6 +51,9 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
                         .bodyToMono(AuthorizationResponse.class)
                         .onErrorResume(e -> {
                             System.out.println(e.getMessage());
+                            if(e.getMessage().contains("404 Not Found")){
+                                throw new RestException(HttpStatus.NOT_FOUND, "User not found");
+                            }
                             throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to identity management");
                         })
                         .flatMap(result -> {
